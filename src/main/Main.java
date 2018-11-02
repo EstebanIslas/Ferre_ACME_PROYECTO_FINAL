@@ -25,10 +25,10 @@ public class Main {
     public static void main(String[] args) {
         ModelSucursal modelSucursal = new ModelSucursal();
         ViewSucursal viewSucursal = new ViewSucursal();
-        //ControllerSucursal controllerSucursal = new ControllerSucursal(modelSucursal, viewSucursal);
+        ControllerSucursal controllerSucursal = new ControllerSucursal(modelSucursal, viewSucursal);
         
-        Object[] controllers = new Object[1];
-        //controllers[0] = ControllerSucursal;
+        Object[] controllers = new Object[2];
+        controllers[0] = controllerSucursal;
         
         ModelMain modelMain = new ModelMain();
         ViewMain viewMain = new ViewMain();

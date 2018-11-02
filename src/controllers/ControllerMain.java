@@ -37,7 +37,9 @@ public class ControllerMain {
     private final ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            if(e.getSource() == viewMain.jmi_sucursales){
+                jmi_Sucursales_actionPerformed();
+            }
         }
     };
     
@@ -58,5 +60,11 @@ public class ControllerMain {
     
     private void setActionListener(){
         viewMain.jmi_sucursales.addActionListener(actionListener);
+    }
+    
+    private void jmi_Sucursales_actionPerformed(){
+        viewMain.setContentPane(controllerSucursal.viewSucursal);
+        viewMain.revalidate();
+        viewMain.repaint();
     }
 }
