@@ -31,6 +31,17 @@ public class ControllerSucursal {
             }else if(e.getSource() == viewSucursal.jb_ultimo){
                 jbtn_ultimo_actionPerformed();
             }
+            
+            // CRUD //
+            else if(e.getSource() == viewSucursal.jb_nuevo){
+                jbtn_nuevo_actionPerformed();
+            }else if(e.getSource() == viewSucursal.jb_guardar){
+                jbtn_guardar_actionPerformed();
+            }else if(e.getSource() == viewSucursal.jb_eliminar){
+                jbtn_eliminar_actionPerformed();
+            }else if(e.getSource() == viewSucursal.jb_editar){
+                jbtn_editar_actionPerformed();
+            }
         }
     };
     
@@ -46,6 +57,11 @@ public class ControllerSucursal {
         viewSucursal.jb_anterior.addActionListener(actionListener);
         viewSucursal.jb_siguiente.addActionListener(actionListener);
         viewSucursal.jb_ultimo.addActionListener(actionListener);
+        
+        //CRUD//
+        viewSucursal.jb_nuevo.addActionListener(actionListener);
+        viewSucursal.jb_guardar.addActionListener(actionListener);
+        viewSucursal.jb_eliminar.addActionListener(actionListener);
     }
     
     /**
@@ -104,4 +120,50 @@ public class ControllerSucursal {
         viewSucursal.jtf_ciudad.setText(modelSucursal.getCiudad());
         viewSucursal.jtf_estado.setText(modelSucursal.getEstado());
     }
+    
+    /**
+     * Método que habilita la edicion de las cajas de texto
+     * Deshabilita los botones de dezplazamiento
+     * A la variable Descicion se le asigna el valor nuevo para saber que se va a crear un nuevo registro
+     */
+    private void jbtn_nuevo_actionPerformed(){
+        System.err.println("Action del boton nuevo");
+        
+        modelSucursal.setDescicion("nuevo");
+        viewSucursal.jtf_calle.setText("");
+        viewSucursal.jtf_numero.setText("");
+        viewSucursal.jtf_colonia.setText("");
+        viewSucursal.jtf_codigo_postal.setText("");
+        viewSucursal.jtf_email.setText("");
+        viewSucursal.jtf_telefono.setText("");
+        viewSucursal.jtf_ciudad.setText("");
+        viewSucursal.jtf_estado.setText("");
+    }
+    
+    /**
+     * Método que realiza el guardado de datos sean nuevos o actualizaciones
+     * Llama al metodo guardarRegistro del modelo como parametro lo que contienen sus cajas de texto
+     * Hibilitar y deshabilitar botones de CRUD
+     */
+    public void jbtn_guardar_actionPerformed(){
+        System.err.println("Action del boton guardar");
+        modelSucursal.guardarRegistro(viewSucursal.jtf_calle.getText(), viewSucursal.jtf_numero.getText(), viewSucursal.jtf_colonia.getText(), viewSucursal.jtf_codigo_postal.getText(), viewSucursal.jtf_email.getText(), viewSucursal.jtf_telefono.getText(), viewSucursal.jtf_ciudad.getText(), viewSucursal.jtf_estado.getText(), Integer.parseInt(viewSucursal.jtf_sucursal_id.getText()));
+    }
+    
+    /**
+     * Método que elimina un dato de la BD
+     * Llama al metodo borrarRegistro del modelo como parametro el id del dato que queremos borrar
+     * Llama al metodo jbtn_ultimo_actionPerformed para indicar al usuario el cambio y actualizacion de datos
+     */
+    public void jbtn_eliminar_actionPerformed(){
+        System.err.println("Action del boton eliminar");
+        modelSucursal.borrarRegistro(Integer.parseInt(viewSucursal.jtf_sucursal_id.getText()));
+        jbtn_ultimo_actionPerformed();
+    }
+    
+    
+    public void jbtn_editar_actionPerformed(){
+        System.err.println("Action de boton jb_modificar");
+        modelSucursal.setDescicion("editar");
+    } 
 }

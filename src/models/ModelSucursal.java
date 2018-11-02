@@ -220,4 +220,116 @@ public class ModelSucursal {
         }
 
     }
+    
+    public void consultaSucursal() {
+        try {
+            conexion = conectarDB();
+            ps = conexion.prepareStatement("Select * from sucursal");
+            rs = ps.executeQuery();
+            rs.next();
+
+            setValues();
+            System.out.println("Consulta realizada!!");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error Model Sucursal Consulta 007 " + ex.getMessage());
+        }
+    }
+    
+    
+    /**
+     * Método que guarda un nuevo o actualiza registro a la Base de Datos.
+     * @param calle guarda en la variable el valor que se encuentre en el jtf_calle
+     * @param numero guarda en la variable el valor que se encuentre en el jtf_numero
+     * @param colonia guarda en la variable el valor que se encuentre en el jtf_colonia
+     * @param codigo_postal guarda en la variable el valor que se encuentre en el jtf_codigo
+     * @param email guarda en la variable el valor que se encuentre en el jtf_email
+     * @param telefono guarda en la variable el valor que se encuentre en el jtf_telefono
+     * @param ciudad guarda en la variable el valor que se encuentre en el jtf_ciudad
+     * @param estado guarda en la variable el valor que se encuentre en el jtf_estado
+     * @param sucursal_id Esta variable se utiliza para la actualizacion de datos
+     */
+    public void guardarRegistro(String calle, String numero, String colonia, String codigo_postal, String email, String telefono, String ciudad, String estado, int sucursal_id) {
+        if (this.getDescicion() == "nuevo") {
+            try {
+                System.out.println("Insertar nuevo registro");
+                Connection con = null;
+                con = conectarDB();
+                ps = con.prepareStatement("insert into sucursal (calle, numero, colonia, codigo_postal, email, telefono, ciudad, estado) values (?,?,?,?,?,?,?,?)");
+                ps.setString(1, calle);
+                ps.setString(2, numero);
+                ps.setString(3, colonia);
+                ps.setString(4, codigo_postal);
+                ps.setString(5, email);
+                ps.setString(6, telefono);
+                ps.setString(7, ciudad);
+                ps.setString(8, estado);
+                int res = ps.executeUpdate();
+                consultaSucursal();
+                if (res > 0) {
+                    JOptionPane.showMessageDialog(null, "Registro guardado Exitosamente!!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al guardar registro");
+                }
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error Model 006" + ex.getMessage());
+            }
+        } else if (this.getDescicion() == "editar") {
+            try {
+                System.out.println("Actualizar registro");
+                Connection con = null;
+                con = conectarDB();
+                //"UPDATE contactos SET nombre=?,email=? WHERE id_contactos=?");
+                ps = con.prepareStatement("Update sucursal set calle=?, numero=?, colonia=?, codigo_postal=?, email=?, telefono=?, ciudad=?, estado=? Where sucursal_id=?");
+                ps.setString(1, calle);
+                ps.setString(2, numero);
+                ps.setString(3, colonia);
+                ps.setString(4, codigo_postal);
+                ps.setString(5, email);
+                ps.setString(6, telefono);
+                ps.setString(7, ciudad);
+                ps.setString(8, estado);
+                ps.setInt(9, sucursal_id);
+                int res = ps.executeUpdate();
+                consultaSucursal();
+                if (res > 0) {
+                    JOptionPane.showMessageDialog(null, "Registro actualizado Exitosamente!!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al guardar registro");
+                }
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error Model 006" + ex.getMessage());
+            }
+        }
+    }
+    
+    /**
+     * Método que borra un registro de la base de datos
+     * Contiene un cuadro de confirmacion para realizar la ejecucion. 
+     * @param sucursal_id Conocer cual es el dato que se desea eliminar
+     */
+    public void borrarRegistro(int sucursal_id) {
+        int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este dato?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp == JOptionPane.YES_OPTION) {
+            try {
+                System.out.println("Elimina un registro");
+                Connection con = null;
+                con = conectarDB();
+                ps = con.prepareStatement("Delete from sucursal where sucursal_id=?");
+                ps.setInt(1, sucursal_id);
+                int res = ps.executeUpdate();
+                consultaSucursal();
+                if (res > 0) {
+                    JOptionPane.showMessageDialog(null, "Registro eliminado Exitosamente!!");
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al eliminar registro");
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error Model 007" + ex.getMessage());
+            }
+        }else
+            JOptionPane.showMessageDialog(null, "Accion Cancelada!!");
+    }
 }
