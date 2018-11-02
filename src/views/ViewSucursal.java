@@ -50,7 +50,6 @@ public class ViewSucursal extends javax.swing.JPanel {
         jtf_ciudad = new javax.swing.JTextField();
         jl_estado = new javax.swing.JLabel();
         jtf_estado = new javax.swing.JTextField();
-        jl_sucursal_id = new javax.swing.JLabel();
         jtf_sucursal_id = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jb_primero = new javax.swing.JButton();
@@ -168,10 +167,6 @@ public class ViewSucursal extends javax.swing.JPanel {
         jl_estado.setForeground(new java.awt.Color(255, 255, 255));
         jl_estado.setText("Estado:");
 
-        jl_sucursal_id.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jl_sucursal_id.setForeground(new java.awt.Color(255, 255, 255));
-        jl_sucursal_id.setText("sucu_id:");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -195,7 +190,6 @@ public class ViewSucursal extends javax.swing.JPanel {
                             .addComponent(jtf_codigo_postal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(39, 39, 39)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jl_sucursal_id)
                             .addComponent(jl_estado)
                             .addComponent(jl_ciudad)
                             .addComponent(jl_telefono))
@@ -247,9 +241,7 @@ public class ViewSucursal extends javax.swing.JPanel {
                                         .addComponent(jl_estado))
                                     .addComponent(jtf_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jl_sucursal_id)
-                                    .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jl_email))
                     .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -371,7 +363,6 @@ public class ViewSucursal extends javax.swing.JPanel {
     public javax.swing.JLabel jl_email;
     public javax.swing.JLabel jl_estado;
     public javax.swing.JLabel jl_numero;
-    public javax.swing.JLabel jl_sucursal_id;
     public javax.swing.JLabel jl_telefono;
     public javax.swing.JTextField jtf_calle;
     public javax.swing.JTextField jtf_ciudad;

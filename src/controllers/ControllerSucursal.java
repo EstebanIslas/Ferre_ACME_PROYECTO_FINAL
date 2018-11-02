@@ -7,6 +7,7 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import models.ModelSucursal;
 import views.ViewSucursal;
 
@@ -41,6 +42,8 @@ public class ControllerSucursal {
                 jbtn_eliminar_actionPerformed();
             }else if(e.getSource() == viewSucursal.jb_editar){
                 jbtn_editar_actionPerformed();
+            }else if(e.getSource() == viewSucursal.jb_cancelar){
+                jbtn_cancelar_actionPerformed();
             }
         }
     };
@@ -62,6 +65,9 @@ public class ControllerSucursal {
         viewSucursal.jb_nuevo.addActionListener(actionListener);
         viewSucursal.jb_guardar.addActionListener(actionListener);
         viewSucursal.jb_eliminar.addActionListener(actionListener);
+        viewSucursal.jb_editar.addActionListener(actionListener);
+        viewSucursal.jb_cancelar.addActionListener(actionListener);
+        
     }
     
     /**
@@ -71,6 +77,37 @@ public class ControllerSucursal {
     private void initDB() {
         modelSucursal.conectarDB();
         setValues();
+        
+        //## No es visible, pero se utilizara para el crud ##//
+        viewSucursal.jtf_sucursal_id.setVisible(false);
+        viewSucursal.jtf_sucursal_id.setEnabled(false);
+        
+        viewSucursal.jb_eliminar.setEnabled(true);
+        viewSucursal.jb_nuevo.setEnabled(true);
+        viewSucursal.jb_editar.setEnabled(true);
+        viewSucursal.jb_guardar.setEnabled(false);
+        viewSucursal.jb_cancelar.setEnabled(false);
+        
+        habilitarCajas(false);
+        habilitarDesplazamiento(true);
+    }
+    
+    private void habilitarCajas(boolean desi){
+        viewSucursal.jtf_calle.setEditable(desi);
+        viewSucursal.jtf_numero.setEditable(desi);
+        viewSucursal.jtf_colonia.setEditable(desi);
+        viewSucursal.jtf_codigo_postal.setEditable(desi);
+        viewSucursal.jtf_email.setEditable(desi);
+        viewSucursal.jtf_telefono.setEditable(desi);
+        viewSucursal.jtf_ciudad.setEditable(desi);
+        viewSucursal.jtf_estado.setEditable(desi);
+    }
+    
+    private void habilitarDesplazamiento(boolean desi){
+        viewSucursal.jb_primero.setEnabled(desi);
+        viewSucursal.jb_siguiente.setEnabled(desi);
+        viewSucursal.jb_anterior.setEnabled(desi);
+        viewSucursal.jb_ultimo.setEnabled(desi);
     }
     
     /**
@@ -129,6 +166,9 @@ public class ControllerSucursal {
     private void jbtn_nuevo_actionPerformed(){
         System.err.println("Action del boton nuevo");
         
+        habilitarCajas(true);
+        habilitarDesplazamiento(false);
+        
         modelSucursal.setDescicion("nuevo");
         viewSucursal.jtf_calle.setText("");
         viewSucursal.jtf_numero.setText("");
@@ -138,6 +178,12 @@ public class ControllerSucursal {
         viewSucursal.jtf_telefono.setText("");
         viewSucursal.jtf_ciudad.setText("");
         viewSucursal.jtf_estado.setText("");
+        
+        viewSucursal.jb_eliminar.setEnabled(false);
+        viewSucursal.jb_nuevo.setEnabled(false);
+        viewSucursal.jb_editar.setEnabled(false);
+        viewSucursal.jb_guardar.setEnabled(true);
+        viewSucursal.jb_cancelar.setEnabled(true);
     }
     
     /**
@@ -148,6 +194,14 @@ public class ControllerSucursal {
     public void jbtn_guardar_actionPerformed(){
         System.err.println("Action del boton guardar");
         modelSucursal.guardarRegistro(viewSucursal.jtf_calle.getText(), viewSucursal.jtf_numero.getText(), viewSucursal.jtf_colonia.getText(), viewSucursal.jtf_codigo_postal.getText(), viewSucursal.jtf_email.getText(), viewSucursal.jtf_telefono.getText(), viewSucursal.jtf_ciudad.getText(), viewSucursal.jtf_estado.getText(), Integer.parseInt(viewSucursal.jtf_sucursal_id.getText()));
+        habilitarDesplazamiento(true);
+        habilitarCajas(false);
+        
+        viewSucursal.jb_eliminar.setEnabled(true);
+        viewSucursal.jb_nuevo.setEnabled(true);
+        viewSucursal.jb_editar.setEnabled(true);
+        viewSucursal.jb_guardar.setEnabled(false);
+        viewSucursal.jb_cancelar.setEnabled(false);
     }
     
     /**
@@ -165,5 +219,27 @@ public class ControllerSucursal {
     public void jbtn_editar_actionPerformed(){
         System.err.println("Action de boton jb_modificar");
         modelSucursal.setDescicion("editar");
+        habilitarCajas(true);
+        habilitarDesplazamiento(false);
+        
+        viewSucursal.jb_eliminar.setEnabled(false);
+        viewSucursal.jb_nuevo.setEnabled(false);
+        viewSucursal.jb_editar.setEnabled(false);
+        viewSucursal.jb_guardar.setEnabled(true);
+        viewSucursal.jb_cancelar.setEnabled(true);
     } 
+    
+    public void jbtn_cancelar_actionPerformed(){
+        System.err.println("Action de boton jb_cancelar");
+        JOptionPane.showMessageDialog(null, "Registro Cancelado!!");
+        jbtn_primero_actionPerformed();
+        habilitarCajas(false);
+        habilitarDesplazamiento(true);
+        
+        viewSucursal.jb_eliminar.setEnabled(true);
+        viewSucursal.jb_nuevo.setEnabled(true);
+        viewSucursal.jb_editar.setEnabled(true);
+        viewSucursal.jb_guardar.setEnabled(false);
+        viewSucursal.jb_cancelar.setEnabled(false);
+    }
 }
