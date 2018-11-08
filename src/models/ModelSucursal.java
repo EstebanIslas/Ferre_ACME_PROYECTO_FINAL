@@ -35,9 +35,9 @@ public class ModelSucursal {
     private String ciudad;
     private String estado;
     
-    ///////////////////////////////
+    //////////////////////////////////
     private String descicion = "";
-    ///////////////////////////////
+    //////////////////////////////////
 
     public int getSucursal_id() {
         return sucursal_id;
