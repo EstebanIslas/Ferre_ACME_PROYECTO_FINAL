@@ -39,6 +39,9 @@ public class ViewSucursal extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jtf_buscar = new javax.swing.JTextField();
+        jb_buscar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jl_calle = new javax.swing.JLabel();
         jtf_calle = new javax.swing.JTextField();
@@ -62,12 +65,14 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_anterior = new javax.swing.JButton();
         jb_siguiente = new javax.swing.JButton();
         jb_ultimo = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtb_sucursal = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(0, 102, 153));
+        setBackground(new java.awt.Color(0, 52, 79));
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 52, 79));
 
-        jb_nuevo.setBackground(new java.awt.Color(0, 102, 153));
+        jb_nuevo.setBackground(new java.awt.Color(0, 52, 79));
         jb_nuevo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jb_nuevo.setForeground(new java.awt.Color(255, 255, 255));
         jb_nuevo.setText("Nuevo");
@@ -76,7 +81,7 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_nuevo.setOpaque(true);
 
-        jb_editar.setBackground(new java.awt.Color(0, 102, 153));
+        jb_editar.setBackground(new java.awt.Color(0, 52, 79));
         jb_editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jb_editar.setForeground(new java.awt.Color(255, 255, 255));
         jb_editar.setText("Editar");
@@ -85,7 +90,7 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_editar.setOpaque(true);
 
-        jb_guardar.setBackground(new java.awt.Color(0, 102, 153));
+        jb_guardar.setBackground(new java.awt.Color(0, 52, 79));
         jb_guardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jb_guardar.setForeground(new java.awt.Color(255, 255, 255));
         jb_guardar.setText("Guardar");
@@ -94,7 +99,7 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_guardar.setOpaque(true);
 
-        jb_eliminar.setBackground(new java.awt.Color(0, 102, 153));
+        jb_eliminar.setBackground(new java.awt.Color(0, 52, 79));
         jb_eliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jb_eliminar.setForeground(new java.awt.Color(255, 255, 255));
         jb_eliminar.setText("Eliminar");
@@ -103,7 +108,7 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_eliminar.setOpaque(true);
 
-        jb_cancelar.setBackground(new java.awt.Color(0, 102, 153));
+        jb_cancelar.setBackground(new java.awt.Color(0, 52, 79));
         jb_cancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jb_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         jb_cancelar.setText("Cancelar");
@@ -122,6 +127,17 @@ public class ViewSucursal extends javax.swing.JPanel {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancel.png"))); // NOI18N
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/search.png"))); // NOI18N
+
+        jb_buscar.setBackground(new java.awt.Color(0, 52, 79));
+        jb_buscar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jb_buscar.setForeground(new java.awt.Color(255, 255, 255));
+        jb_buscar.setText("Buscar");
+        jb_buscar.setBorder(null);
+        jb_buscar.setContentAreaFilled(false);
+        jb_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_buscar.setOpaque(true);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -129,24 +145,35 @@ public class ViewSucursal extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_imgnuevo)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jb_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jl_imgnuevo)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jb_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(26, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(26, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jb_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jtf_buscar, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,10 +198,16 @@ public class ViewSucursal extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jb_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jb_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel2.setBackground(new java.awt.Color(0, 52, 79));
 
         jl_calle.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jl_calle.setForeground(new java.awt.Color(255, 255, 255));
@@ -289,9 +322,9 @@ public class ViewSucursal extends javax.swing.JPanel {
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 52, 79));
 
-        jb_primero.setBackground(new java.awt.Color(0, 102, 153));
+        jb_primero.setBackground(new java.awt.Color(0, 52, 79));
         jb_primero.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jb_primero.setForeground(new java.awt.Color(255, 255, 255));
         jb_primero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/first.png"))); // NOI18N
@@ -300,7 +333,7 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_primero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_primero.setOpaque(true);
 
-        jb_anterior.setBackground(new java.awt.Color(0, 102, 153));
+        jb_anterior.setBackground(new java.awt.Color(0, 52, 79));
         jb_anterior.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jb_anterior.setForeground(new java.awt.Color(255, 255, 255));
         jb_anterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/previous.png"))); // NOI18N
@@ -309,7 +342,7 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_anterior.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_anterior.setOpaque(true);
 
-        jb_siguiente.setBackground(new java.awt.Color(0, 102, 153));
+        jb_siguiente.setBackground(new java.awt.Color(0, 52, 79));
         jb_siguiente.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jb_siguiente.setForeground(new java.awt.Color(255, 255, 255));
         jb_siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/next.png"))); // NOI18N
@@ -318,7 +351,7 @@ public class ViewSucursal extends javax.swing.JPanel {
         jb_siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_siguiente.setOpaque(true);
 
-        jb_ultimo.setBackground(new java.awt.Color(0, 102, 153));
+        jb_ultimo.setBackground(new java.awt.Color(0, 52, 79));
         jb_ultimo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jb_ultimo.setForeground(new java.awt.Color(255, 255, 255));
         jb_ultimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/last.png"))); // NOI18N
@@ -354,30 +387,52 @@ public class ViewSucursal extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jtb_sucursal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jtb_sucursal);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1026, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(58, 58, 58)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))))
+                        .addGap(211, 211, 211)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -385,6 +440,7 @@ public class ViewSucursal extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -392,8 +448,10 @@ public class ViewSucursal extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSlider jSlider1;
     public javax.swing.JButton jb_anterior;
+    public javax.swing.JButton jb_buscar;
     public javax.swing.JButton jb_cancelar;
     public javax.swing.JButton jb_editar;
     public javax.swing.JButton jb_eliminar;
@@ -411,6 +469,8 @@ public class ViewSucursal extends javax.swing.JPanel {
     private javax.swing.JLabel jl_imgnuevo;
     public javax.swing.JLabel jl_numero;
     public javax.swing.JLabel jl_telefono;
+    public javax.swing.JTable jtb_sucursal;
+    public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_calle;
     public javax.swing.JTextField jtf_ciudad;
     public javax.swing.JTextField jtf_codigo_postal;

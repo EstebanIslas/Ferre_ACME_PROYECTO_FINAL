@@ -45,6 +45,12 @@ public class ControllerSucursal {
             }else if(e.getSource() == viewSucursal.jb_cancelar){
                 jbtn_cancelar_actionPerformed();
             }
+            
+            else if(e.getSource() == viewSucursal.jb_buscar){
+                modelSucursal.limpiarTabla();
+                modelSucursal.buscarTabla(viewSucursal.jtf_buscar.getText());
+                modelSucursal.insertarDatosTabla();
+            }
         }
     };
     
@@ -67,7 +73,7 @@ public class ControllerSucursal {
         viewSucursal.jb_eliminar.addActionListener(actionListener);
         viewSucursal.jb_editar.addActionListener(actionListener);
         viewSucursal.jb_cancelar.addActionListener(actionListener);
-        
+        viewSucursal.jb_buscar.addActionListener(actionListener);
     }
     
     /**
@@ -75,7 +81,7 @@ public class ControllerSucursal {
      * primer registro en las cajas de texto de ViewAgenda.
      */
     private void initDB() {
-        modelSucursal.conectarDB();
+        modelSucursal.consultaSucursal();
         setValues();
         
         //## No es visible, pero se utilizara para el crud ##//
@@ -90,6 +96,10 @@ public class ControllerSucursal {
         
         habilitarCajas(false);
         habilitarDesplazamiento(true);
+        
+        modelSucursal.tituloTabla();
+        viewSucursal.jtb_sucursal.setModel(modelSucursal.getModelo());
+        modelSucursal.insertarDatosTabla();
     }
     
     private void habilitarCajas(boolean desi){
@@ -241,5 +251,10 @@ public class ControllerSucursal {
         viewSucursal.jb_editar.setEnabled(true);
         viewSucursal.jb_guardar.setEnabled(false);
         viewSucursal.jb_cancelar.setEnabled(false);
+    }
+    public void llenarTabla(){
+        modelSucursal.tituloTabla();
+        modelSucursal.insertarDatosTabla();
+        viewSucursal.jtb_sucursal.setModel(modelSucursal.getModelo());
     }
 }

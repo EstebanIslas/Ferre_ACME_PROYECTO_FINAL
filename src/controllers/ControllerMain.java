@@ -60,6 +60,7 @@ public class ControllerMain {
     
     private void setActionListener(){
         viewMain.jmi_sucursales.addActionListener(actionListener);
+        viewMain.jmi_proveedores.addActionListener(actionListener);
     }
     
     private void jmi_Sucursales_actionPerformed(){
