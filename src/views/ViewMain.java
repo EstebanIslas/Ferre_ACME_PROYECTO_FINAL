@@ -32,7 +32,7 @@ public class ViewMain extends javax.swing.JFrame {
         jmenu_menu = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmi_sucursales = new javax.swing.JMenuItem();
-        jmi_proveedores = new javax.swing.JMenuItem();
+        jmi_productos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
@@ -48,14 +48,14 @@ public class ViewMain extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(378, 378, 378)
                 .addComponent(jl_img_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(446, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(94, 94, 94)
                 .addComponent(jl_img_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         jMenu1.setBorder(null);
@@ -64,8 +64,8 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_sucursales.setText("SUCURSALES");
         jMenu1.add(jmi_sucursales);
 
-        jmi_proveedores.setText("PROVEEDORES");
-        jMenu1.add(jmi_proveedores);
+        jmi_productos.setText("PRODUCTOS");
+        jMenu1.add(jmi_productos);
 
         jmenu_menu.add(jMenu1);
 
@@ -125,7 +125,7 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jl_img_logo;
     private javax.swing.JMenuBar jmenu_menu;
-    public javax.swing.JMenuItem jmi_proveedores;
+    public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_sucursales;
     // End of variables declaration//GEN-END:variables
 }

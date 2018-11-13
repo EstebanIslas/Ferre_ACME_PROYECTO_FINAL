@@ -24,6 +24,7 @@ public class ControllerMain {
     private Object controllers[];
     
     private ControllerSucursal controllerSucursal;
+    private ControllerProducto controllerProducto;
 
     public ControllerMain(ModelMain modelMain, ViewMain viewMain, Object[] controllers) {
         this.modelMain = modelMain;
@@ -40,6 +41,9 @@ public class ControllerMain {
             if(e.getSource() == viewMain.jmi_sucursales){
                 jmi_Sucursales_actionPerformed();
             }
+            else if(e.getSource() == viewMain.jmi_productos){
+                jmi_Productos_actionPerformed();
+            }
         }
     };
     
@@ -50,6 +54,7 @@ public class ControllerMain {
      */
     private void setControllers() {
         controllerSucursal = (ControllerSucursal) controllers[0];
+        controllerProducto = (ControllerProducto) controllers[1];
     }
     
     private void initComponets() {
@@ -60,11 +65,17 @@ public class ControllerMain {
     
     private void setActionListener(){
         viewMain.jmi_sucursales.addActionListener(actionListener);
-        viewMain.jmi_proveedores.addActionListener(actionListener);
+        viewMain.jmi_productos.addActionListener(actionListener);
     }
     
     private void jmi_Sucursales_actionPerformed(){
         viewMain.setContentPane(controllerSucursal.viewSucursal);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    
+    private void jmi_Productos_actionPerformed(){
+        viewMain.setContentPane(controllerProducto.viewProducto);
         viewMain.revalidate();
         viewMain.repaint();
     }

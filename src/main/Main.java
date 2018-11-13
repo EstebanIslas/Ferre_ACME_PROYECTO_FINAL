@@ -13,6 +13,10 @@ import models.ModelSucursal;
 import views.ViewSucursal;
 import controllers.ControllerSucursal;
 
+import models.ModelProducto;
+import views.ViewProducto;
+import controllers.ControllerProducto;
+
 /**
  *
  * @author EstebanIslas
@@ -27,8 +31,14 @@ public class Main {
         ViewSucursal viewSucursal = new ViewSucursal();
         ControllerSucursal controllerSucursal = new ControllerSucursal(modelSucursal, viewSucursal);
         
+        ModelProducto modelProducto = new ModelProducto();
+        ViewProducto viewProducto = new ViewProducto();
+        ControllerProducto controllerProducto = new ControllerProducto(modelProducto, viewProducto);
+        
         Object[] controllers = new Object[2];
         controllers[0] = controllerSucursal;
+        controllers[1] = controllerProducto;
+        
         
         ModelMain modelMain = new ModelMain();
         ViewMain viewMain = new ViewMain();
