@@ -54,7 +54,7 @@ public class ControllerProducto implements KeyListener {
         this.viewProducto = viewProducto;
         setActionListener();
         initDB();
-
+        iniciarCrud();
     }
 
     private void setActionListener() {
@@ -70,7 +70,15 @@ public class ControllerProducto implements KeyListener {
         viewProducto.jb_editar.addActionListener(actionListener);
         viewProducto.jb_cancelar.addActionListener(actionListener);
     }
-
+    
+    private void iniciarCrud(){
+        viewProducto.jb_nuevo.setEnabled(true);
+        viewProducto.jb_editar.setEnabled(true);
+        viewProducto.jb_eliminar.setEnabled(true);
+        viewProducto.jb_guardar.setEnabled(false);
+        viewProducto.jb_cancelar.setEnabled(false);
+    }
+    
     private void initDB() {
         modelProducto.consultaProductos();
         getValues();
@@ -80,12 +88,7 @@ public class ControllerProducto implements KeyListener {
         viewProducto.jtf_producto_id.setVisible(false);
         viewProducto.jtf_producto_id.setEnabled(false);
 
-        viewProducto.jb_nuevo.setEnabled(true);
-        viewProducto.jb_editar.setEnabled(true);
-        viewProducto.jb_eliminar.setEnabled(true);
-        viewProducto.jb_eliminar.setEnabled(false);
-        viewProducto.jb_guardar.setEnabled(false);
-        viewProducto.jb_cancelar.setEnabled(false);
+        
 
         habilitarCajas(false);
         habilitarDezplazamiento(true);

@@ -29,6 +29,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jl_logoempresa" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jl_titulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -41,6 +43,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jl_logoempresa" min="-2" pref="68" max="-2" attributes="0"/>
                   <Component id="jl_titulo" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="546" max="-2" attributes="0"/>
@@ -83,84 +89,24 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="261" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jl_sucursal" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jtf_sucursal_calle" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jb_agregar" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jb_eliminar" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jtf_buscar" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="jtf_sucursal_id" min="-2" pref="41" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jl_fecha" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jtf_fecha" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jb_finalizar" min="-2" pref="101" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane2" min="-2" pref="414" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace pref="19" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  <Component id="jl_iva" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jtf_iva" min="-2" pref="120" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jl_subtotal" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jtf_subtotal" min="-2" pref="120" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="jl_total" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jtf_total" min="-2" pref="102" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jtf_precio_compra" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jsp_cantidad" alignment="0" pref="62" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jtf_buscar" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jtf_usuario_nombre" min="-2" pref="120" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jtf_compra_id4" min="-2" pref="41" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jtf_usuario_nombre" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jtf_compra_id4" min="-2" pref="41" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jtf_precio_compra" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jsp_cantidad" alignment="0" pref="62" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -168,6 +114,69 @@
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="414" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="421" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jl_sucursal" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jtf_sucursal_calle" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jb_agregar" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jb_eliminar" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jtf_sucursal_id" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jl_fecha" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jtf_fecha" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jb_finalizar" min="-2" pref="101" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane2" min="-2" pref="414" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="jl_iva" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jtf_iva" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jl_subtotal" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jtf_subtotal" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jl_total" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jtf_total" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -200,11 +209,19 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jl_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jsp_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jl_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jsp_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jl_precio_compra" min="-2" max="-2" attributes="0"/>
                       <Component id="jtf_precio_compra" min="-2" max="-2" attributes="0"/>
@@ -633,6 +650,8 @@
             </Property>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jl_logoempresa">
@@ -651,6 +670,13 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="COMPRAS"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/goods.png"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

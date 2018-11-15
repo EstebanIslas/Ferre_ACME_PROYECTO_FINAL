@@ -17,6 +17,10 @@ import models.ModelProducto;
 import views.ViewProducto;
 import controllers.ControllerProducto;
 
+import models.ModelProveedores;
+import views.ViewProveedores;
+import controllers.ControllerProveedores;
+
 /**
  *
  * @author EstebanIslas
@@ -35,9 +39,14 @@ public class Main {
         ViewProducto viewProducto = new ViewProducto();
         ControllerProducto controllerProducto = new ControllerProducto(modelProducto, viewProducto);
         
-        Object[] controllers = new Object[2];
+        ModelProveedores modelProveedores = new ModelProveedores();
+        ViewProveedores viewProveedores = new ViewProveedores();
+        ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
+        
+        Object[] controllers = new Object[3];
         controllers[0] = controllerSucursal;
         controllers[1] = controllerProducto;
+        controllers[2] = controllerProveedores;
         
         
         ModelMain modelMain = new ModelMain();

@@ -27,7 +27,7 @@
               <Component id="jl_logo_empresa" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jl_tools_icon" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jl_titulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
@@ -38,19 +38,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jl_tools_icon" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jl_logo_empresa" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
-                          <Component id="jl_titulo" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jl_logo_empresa" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="jl_titulo" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="jl_tools_icon" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
@@ -129,7 +121,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jb_guardar" alignment="1" pref="142" max="32767" attributes="0"/>
                           <Component id="jb_editar" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jb_nuevo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jb_nuevo" alignment="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -152,9 +144,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jb_nuevo" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel2" max="32767" attributes="0"/>
+                          <Component id="jb_nuevo" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -561,10 +553,10 @@
                                   <Component id="jl_tipo" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jtf_tipo" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jtf_nombre" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jtf_producto_id" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jtf_tipo" alignment="0" pref="148" max="32767" attributes="0"/>
+                                  <Component id="jtf_nombre" alignment="0" pref="148" max="32767" attributes="0"/>
+                                  <Component id="jtf_producto_id" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
