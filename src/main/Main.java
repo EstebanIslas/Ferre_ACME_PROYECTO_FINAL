@@ -17,9 +17,17 @@ import models.ModelProducto;
 import views.ViewProducto;
 import controllers.ControllerProducto;
 
+import models.ModelDescuento;
+import views.ViewDescuento;
+import controllers.ControllerDescuento;
+
 import models.ModelProveedores;
 import views.ViewProveedores;
 import controllers.ControllerProveedores;
+
+import models.ModelCompras;
+import views.ViewCompras;
+import controllers.ControllerCompras;
 
 /**
  *
@@ -43,10 +51,20 @@ public class Main {
         ViewProveedores viewProveedores = new ViewProveedores();
         ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
         
-        Object[] controllers = new Object[3];
+        ModelCompras modelCompras = new ModelCompras();
+        ViewCompras viewCompras = new ViewCompras();
+        ControllerCompras controllerCompras = new ControllerCompras(modelCompras, viewCompras);
+        
+        ModelDescuento modelDescuento = new ModelDescuento();
+        ViewDescuento viewDescuento = new ViewDescuento();
+        ControllerDescuento controllerDescuento = new ControllerDescuento(modelDescuento, viewDescuento);
+        
+        Object[] controllers = new Object[5];
         controllers[0] = controllerSucursal;
         controllers[1] = controllerProducto;
         controllers[2] = controllerProveedores;
+        controllers[3] = controllerCompras;
+        controllers[4] = controllerDescuento;
         
         
         ModelMain modelMain = new ModelMain();

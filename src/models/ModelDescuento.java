@@ -1,8 +1,6 @@
 package models;
 
-import java.sql.Statement;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,31 +13,26 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author EstebanIslas
  */
-public class ModelProducto extends Conexion {
+public class ModelDescuento extends Conexion {
 
     private Connection conexion;
-    private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
 
-    private int producto_id;
+    private int descuentoid;
     private String nombre;
+    private double porcentaje;
     private String tipo;
-    private String marca;
-    private double precio_venta;
-    private String unidad_medida;
 
-    //////////////////////////////////
     private String descicion = "";
     private DefaultTableModel modelo = new DefaultTableModel();
-    //////////////////////////////////
 
-    public int getProducto_id() {
-        return producto_id;
+    public int getDescuentoid() {
+        return descuentoid;
     }
 
-    public void setProducto_id(int producto_id) {
-        this.producto_id = producto_id;
+    public void setDescuentoid(int descuentoid) {
+        this.descuentoid = descuentoid;
     }
 
     public String getNombre() {
@@ -50,36 +43,20 @@ public class ModelProducto extends Conexion {
         this.nombre = nombre;
     }
 
+    public double getPorcentaje() {
+        return porcentaje;
+    }
+
+    public void setPorcentaje(double porcentaje) {
+        this.porcentaje = porcentaje;
+    }
+
     public String getTipo() {
         return tipo;
     }
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public double getPrecio_venta() {
-        return precio_venta;
-    }
-
-    public void setPrecio_venta(double precio_venta) {
-        this.precio_venta = precio_venta;
-    }
-
-    public String getUnidad_medida() {
-        return unidad_medida;
-    }
-
-    public void setUnidad_medida(String unidad_medida) {
-        this.unidad_medida = unidad_medida;
     }
 
     public String getDescicion() {
@@ -98,10 +75,10 @@ public class ModelProducto extends Conexion {
         this.modelo = modelo;
     }
 
-    public void consultaProductos() {
+    public void consultaDescuentos() {
         try {
             conexion = getConexion();
-            ps = conexion.prepareStatement("Select * from productos");
+            ps = conexion.prepareStatement("Select * from descuentos");
             rs = ps.executeQuery();
             rs.next();
 
@@ -114,12 +91,11 @@ public class ModelProducto extends Conexion {
 
     public void setValues() {
         try {
-            producto_id = rs.getInt("productoid");
+            descuentoid = rs.getInt("descuentoid");
             nombre = rs.getString("nombre");
+            porcentaje = rs.getDouble("porcentaje");
             tipo = rs.getString("tipo");
-            marca = rs.getString("marca");
-            precio_venta = rs.getDouble("precio_venta");
-            unidad_medida = rs.getString("unidad_medida");
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error Model-setValues 001 " + ex.getMessage());
         }
@@ -195,89 +171,66 @@ public class ModelProducto extends Conexion {
         }
 
     }
-
-    /**
-     * Método que guarda un nuevo o actualiza registro a la Base de Datos.
-     *
-     * @param producto_id guarda en la variable el valor que se almacena en una
-     * caja de texto
-     * @param nombre guarda en la variable el valor que se almacena en una caja
-     * de texto
-     * @param tipo guarda en la variable el valor que se almacena en una caja de
-     * texto
-     * @param marca guarda en la variable el valor que se almacena en una caja
-     * de texto
-     * @param precio_venta guarda en la variable el valor que se almacena en una
-     * caja de texto
-     * @param unidad_medida guarda en la variable el valor que se almacena en
-     * una caja de texto
-     */
-    public void guardarRegistro(int producto_id, String nombre, String tipo, String marca, double precio_venta, String unidad_medida) {
+    public void guardarRegristro(int descuentoid, String nombre, double porcentaje, String tipo) {
         if (this.getDescicion() == "nuevo") {
             try {
-                //System.out.println("Insertar nuevo registro");
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("INSERT INTO productos (nombre, tipo, marca, precio_venta, unidad_medida) values (?,?,?,?,?)");
+                ps = conexion.prepareStatement("Insert into descuentos (nombre, porcentaje, tipo) values (?,?,?)");                
                 ps.setString(1, nombre);
-                ps.setString(2, tipo);
-                ps.setString(3, marca);
-                ps.setDouble(4, precio_venta);
-                ps.setString(5, unidad_medida);
-
+                ps.setDouble(2, porcentaje);
+                ps.setString(3, tipo);
+                
                 int res = ps.executeUpdate();
-
-                consultaProductos();
-                if (res > 0) {
+                
+                consultaDescuentos();
+                
+                if(res > 0){
                     JOptionPane.showMessageDialog(null, "Registro guardado Exitosamente!!");
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al guardar registro");
                 }
-
+                
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Error Model-Save_New 006" + ex.getMessage());
             }
-        } else if (this.getDescicion() == "editar") {
+        }
+        else if (this.getDescicion() == "editar") {
             try {
-                //System.out.println("Actualizar registro");
                 conexion = null;
                 conexion = getConexion();
-                //"UPDATE contactos SET nombre=?,email=? WHERE id_contactos=?");
-                ps = conexion.prepareStatement("UPDATE productos SET nombre=?, tipo=?, marca=?, precio_venta=?, unidad_medida=? WHERE productoid=?");
+                ps = conexion.prepareStatement("UPDATE descuentos SET nombre = ?, porcentaje=?, tipo=? WHERE descuentoid=?;");
                 ps.setString(1, nombre);
-                ps.setString(2, tipo);
-                ps.setString(3, marca);
-                ps.setDouble(4, precio_venta);
-                ps.setString(5, unidad_medida);
-                ps.setInt(6, producto_id);
-
+                ps.setDouble(2, porcentaje);
+                ps.setString(3, tipo);
+                ps.setInt(4, descuentoid);
+                
                 int res = ps.executeUpdate();
-                consultaProductos();
-
+                
+                consultaDescuentos();
+                
                 if (res > 0) {
                     JOptionPane.showMessageDialog(null, "Registro actualizado Exitosamente!!");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error al guardar registro");
+                    JOptionPane.showMessageDialog(null, "Error al editar registro");
                 }
-
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error Model-Save_Update 006" + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error Model-Update_Doc 006" + ex.getMessage());
             }
         }
     }
-
-    public void borrarRegistro(int producto_id) {
+    public void borrarRegistro(int descuentoid){
         int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este dato?", "Alerta!", JOptionPane.YES_NO_OPTION);
         if (resp == JOptionPane.YES_OPTION) {
             try {
                 //System.out.println("Elimina un registro");
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("DELETE FROM productos WHERE productoid=?");
-                ps.setInt(1, producto_id);
+                ps = conexion.prepareStatement("DELETE FROM descuentos WHERE descuentoid=?");
+                ps.setInt(1, descuentoid);
 
                 int res = ps.executeUpdate();
-                consultaProductos();
+                consultaDescuentos();
 
                 if (res > 0) {
                     JOptionPane.showMessageDialog(null, "Registro eliminado Exitosamente!!");
@@ -292,27 +245,23 @@ public class ModelProducto extends Conexion {
             JOptionPane.showMessageDialog(null, "Accion Cancelada!!");
         }
     }
-
-    public void columnasTabla() {
-        modelo.addColumn("Identificador");
+    
+    public void columnasTabla(){
+        modelo.addColumn("ID");
         modelo.addColumn("Nombre");
+        modelo.addColumn("Porcentaje");
         modelo.addColumn("Tipo");
-        modelo.addColumn("Marca");
-        modelo.addColumn("Precio Venta");
-        modelo.addColumn("UN-MED");
     }
-
+    
     public void agregaraTabla() {
         try {
-            String[] datos = new String[6];
+            String[] datos = new String[4];
             rs.first();
             do {
                 datos[0] = rs.getString(1);
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
-                datos[4] = rs.getString(5);
-                datos[5] = rs.getString(6);
 
                 modelo.addRow(datos);
             } while (rs.next());
@@ -323,7 +272,7 @@ public class ModelProducto extends Conexion {
             JOptionPane.showMessageDialog(null, "Error en Tabla!! " + ex.getMessage());
         }
     }
-
+    
     public void limpiarTabla() {
         int a = modelo.getRowCount();
         for (int i = 0; i < a; i++) {
@@ -331,7 +280,7 @@ public class ModelProducto extends Conexion {
         }
         System.err.println("Limpio la tabla");
     }
-
+    
     /**
      * Método que realiza una consulta de busqueda para el usuario
      *
@@ -343,7 +292,7 @@ public class ModelProducto extends Conexion {
             conexion = null;
             conexion = getConexion();
 
-            ps = conexion.prepareStatement("SELECT * FROM productos where nombre like '%" + buscar + "%' Or productoid like '%" + buscar + "%';");
+            ps = conexion.prepareStatement("SELECT * FROM descuentos where nombre like '%" + buscar + "%' Or tipo like '%" + buscar + "%';");
             rs = ps.executeQuery();
 
             //System.out.println("Consulta");
@@ -354,4 +303,6 @@ public class ModelProducto extends Conexion {
             JOptionPane.showMessageDialog(null, "Error en Busqueda!! " + ex.getMessage());
         }
     }
+
+    
 }

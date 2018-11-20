@@ -31,10 +31,12 @@ public class ViewMain extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jl_img_logo = new javax.swing.JLabel();
         jmenu_menu = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jmenu = new javax.swing.JMenu();
         jmi_sucursales = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
         jmi_proveedores = new javax.swing.JMenuItem();
+        jmi_descuentos = new javax.swing.JMenuItem();
+        jmi_compra = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
@@ -67,7 +69,7 @@ public class ViewMain extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(328, Short.MAX_VALUE)
+                .addContainerGap(238, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(299, 299, 299))
         );
@@ -79,19 +81,32 @@ public class ViewMain extends javax.swing.JFrame {
                 .addContainerGap(227, Short.MAX_VALUE))
         );
 
-        jMenu1.setBorder(null);
-        jMenu1.setText("MENÚ");
+        jmenu_menu.setBorder(null);
+        jmenu_menu.setBorderPainted(false);
+        jmenu_menu.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_menu.setOpaque(false);
+
+        jmenu.setBorder(null);
+        jmenu.setText("MENÚ");
+        jmenu.setContentAreaFilled(false);
+        jmenu.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
 
         jmi_sucursales.setText("SUCURSALES");
-        jMenu1.add(jmi_sucursales);
+        jmenu.add(jmi_sucursales);
 
         jmi_productos.setText("PRODUCTOS");
-        jMenu1.add(jmi_productos);
+        jmenu.add(jmi_productos);
 
         jmi_proveedores.setText("PROVEEDORES");
-        jMenu1.add(jmi_proveedores);
+        jmenu.add(jmi_proveedores);
 
-        jmenu_menu.add(jMenu1);
+        jmi_descuentos.setText("DESCUENTOS");
+        jmenu.add(jmi_descuentos);
+
+        jmi_compra.setText("COMPRAS");
+        jmenu.add(jmi_compra);
+
+        jmenu_menu.add(jmenu);
 
         setJMenuBar(jmenu_menu);
 
@@ -147,11 +162,13 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jl_img_logo;
+    public javax.swing.JMenu jmenu;
     private javax.swing.JMenuBar jmenu_menu;
+    public javax.swing.JMenuItem jmi_compra;
+    public javax.swing.JMenuItem jmi_descuentos;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
     public javax.swing.JMenuItem jmi_sucursales;

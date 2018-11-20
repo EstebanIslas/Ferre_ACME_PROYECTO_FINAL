@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import models.ModelSucursal;
 import views.ViewSucursal;
@@ -51,6 +53,7 @@ public class ControllerSucursal implements KeyListener {
     public ControllerSucursal(ModelSucursal modelSucursal, ViewSucursal viewSucursal) {
         this.modelSucursal = modelSucursal;
         this.viewSucursal = viewSucursal;
+        this.viewSucursal.jtb_sucursal.addMouseListener(mouseListener);
         setActionListener();
         initDB();
     }
@@ -67,7 +70,6 @@ public class ControllerSucursal implements KeyListener {
         viewSucursal.jb_eliminar.addActionListener(actionListener);
         viewSucursal.jb_editar.addActionListener(actionListener);
         viewSucursal.jb_cancelar.addActionListener(actionListener);
-        viewSucursal.jb_buscar.addActionListener(actionListener);
     }
 
     /**
@@ -92,7 +94,7 @@ public class ControllerSucursal implements KeyListener {
         habilitarDesplazamiento(true);
 
         llenarTabla();
-        
+
         //Aplicar a caja de texto el KeyListener 
         this.viewSucursal.jtf_buscar.addKeyListener(this);
     }
@@ -207,6 +209,9 @@ public class ControllerSucursal implements KeyListener {
         viewSucursal.jb_editar.setEnabled(true);
         viewSucursal.jb_guardar.setEnabled(false);
         viewSucursal.jb_cancelar.setEnabled(false);
+
+        modelSucursal.limpiarTabla();
+        modelSucursal.insertarDatosTabla();
     }
 
     /**
@@ -266,11 +271,44 @@ public class ControllerSucursal implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
+
+    MouseListener mouseListener = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getSource() == viewSucursal.jtb_sucursal) {
+                int seleccion = viewSucursal.jtb_sucursal.getSelectedRow();
+
+                viewSucursal.jtf_sucursal_id.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 0)));
+                viewSucursal.jtf_calle.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 1)));
+                viewSucursal.jtf_numero.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 2)));
+                viewSucursal.jtf_colonia.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 3)));
+                viewSucursal.jtf_codigo_postal.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 4)));
+                viewSucursal.jtf_email.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 5)));
+                viewSucursal.jtf_telefono.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 6)));
+                viewSucursal.jtf_ciudad.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 7)));
+                viewSucursal.jtf_estado.setText(String.valueOf(viewSucursal.jtb_sucursal.getValueAt(seleccion, 8)));
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+    };
 }

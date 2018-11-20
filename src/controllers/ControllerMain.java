@@ -26,6 +26,8 @@ public class ControllerMain {
     private ControllerSucursal controllerSucursal;
     private ControllerProducto controllerProducto;
     private ControllerProveedores controllerProveedores;
+    private ControllerCompras controllerCompras;
+    private ControllerDescuento controllerDescuento;
 
     public ControllerMain(ModelMain modelMain, ViewMain viewMain, Object[] controllers) {
         this.modelMain = modelMain;
@@ -48,6 +50,13 @@ public class ControllerMain {
             else if(e.getSource() == viewMain.jmi_proveedores){
                 jmi_Proveedores_actionPerformed();
             }
+            else if(e.getSource() == viewMain.jmi_compra){
+                jmi_Compras_actionPerformed();
+            }
+            else if(e.getSource() == viewMain.jmi_descuentos){
+                jmi_Descuentos_actionPerformed();
+            }
+            
         }
     };
     
@@ -60,6 +69,8 @@ public class ControllerMain {
         controllerSucursal = (ControllerSucursal) controllers[0];
         controllerProducto = (ControllerProducto) controllers[1];
         controllerProveedores = (ControllerProveedores) controllers[2];
+        controllerCompras = (ControllerCompras) controllers[3];
+        controllerDescuento = (ControllerDescuento) controllers[4];
     }
     
     private void initComponets() {
@@ -72,6 +83,8 @@ public class ControllerMain {
         viewMain.jmi_sucursales.addActionListener(actionListener);
         viewMain.jmi_productos.addActionListener(actionListener);
         viewMain.jmi_proveedores.addActionListener(actionListener);
+        viewMain.jmi_compra.addActionListener(actionListener);
+        viewMain.jmi_descuentos.addActionListener(actionListener);
     }
     
     private void jmi_Sucursales_actionPerformed(){
@@ -88,6 +101,17 @@ public class ControllerMain {
     
     private void jmi_Proveedores_actionPerformed(){
         viewMain.setContentPane(controllerProveedores.viewProveedores);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    private void jmi_Compras_actionPerformed(){
+        viewMain.setContentPane(controllerCompras.viewCompras);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    
+    private void jmi_Descuentos_actionPerformed(){
+        viewMain.setContentPane(controllerDescuento.viewDescuento);
         viewMain.revalidate();
         viewMain.repaint();
     }

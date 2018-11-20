@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,7 +41,8 @@ public class ControllerProducto implements KeyListener {
                 jbtn_editar_actionPerformed();
             } else if (e.getSource() == viewProducto.jb_cancelar) {
                 jbtn_cancelar_actionPerformed();
-            } /*else if (e.getSource() == viewProducto.jb_buscar) {
+            }
+            /*else if (e.getSource() == viewProducto.jb_buscar) {
                 modelProducto.limpiarTabla();
                 modelProducto.buscarTabla(viewProducto.jtf_buscar.getText());
                 //viewProducto.jtb_tabla_productos.setModel(modelProducto.getModelo());
@@ -52,6 +55,7 @@ public class ControllerProducto implements KeyListener {
     public ControllerProducto(ModelProducto modelProducto, ViewProducto viewProducto) {
         this.modelProducto = modelProducto;
         this.viewProducto = viewProducto;
+        this.viewProducto.jtb_tabla_productos.addMouseListener(mouseListener);
         setActionListener();
         initDB();
         iniciarCrud();
@@ -70,15 +74,15 @@ public class ControllerProducto implements KeyListener {
         viewProducto.jb_editar.addActionListener(actionListener);
         viewProducto.jb_cancelar.addActionListener(actionListener);
     }
-    
-    private void iniciarCrud(){
+
+    private void iniciarCrud() {
         viewProducto.jb_nuevo.setEnabled(true);
         viewProducto.jb_editar.setEnabled(true);
         viewProducto.jb_eliminar.setEnabled(true);
         viewProducto.jb_guardar.setEnabled(false);
         viewProducto.jb_cancelar.setEnabled(false);
     }
-    
+
     private void initDB() {
         modelProducto.consultaProductos();
         getValues();
@@ -88,13 +92,11 @@ public class ControllerProducto implements KeyListener {
         viewProducto.jtf_producto_id.setVisible(false);
         viewProducto.jtf_producto_id.setEnabled(false);
 
-        
-
         habilitarCajas(false);
         habilitarDezplazamiento(true);
 
         llenarTabla();
-        
+
         //Aplicar a caja de texto el keyListener
         this.viewProducto.jtf_buscar.addKeyListener(this);
 
@@ -197,14 +199,18 @@ public class ControllerProducto implements KeyListener {
 
         modelProducto.guardarRegistro(Integer.parseInt(viewProducto.jtf_producto_id.getText()), viewProducto.jtf_nombre.getText(), viewProducto.jtf_tipo.getText(), viewProducto.jtf_marca.getText(), Double.parseDouble(viewProducto.jtf_precio_venta.getText()), viewProducto.jtf_unidad_medida.getText());
 
-        habilitarCajas(true);
-        habilitarDezplazamiento(false);
+        habilitarCajas(false);
+        habilitarDezplazamiento(true);
 
         viewProducto.jb_eliminar.setEnabled(true);
         viewProducto.jb_nuevo.setEnabled(true);
         viewProducto.jb_editar.setEnabled(true);
         viewProducto.jb_guardar.setEnabled(false);
         viewProducto.jb_cancelar.setEnabled(false);
+
+        modelProducto.limpiarTabla();
+        modelProducto.agregaraTabla();
+
     }
 
     /**
@@ -268,11 +274,43 @@ public class ControllerProducto implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        
     }
+
+    MouseListener mouseListener = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getSource() == viewProducto.jtb_tabla_productos) {
+                int seleccion = viewProducto.jtb_tabla_productos.getSelectedRow();
+
+                //viewCompras.jtf_nombre_producto.setText(String.valueOf(viewCompras.jtb_productos.getValueAt(seleccion, 1)));
+                
+                viewProducto.jtf_producto_id.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 0)));
+                viewProducto.jtf_nombre.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 1)));
+                viewProducto.jtf_tipo.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 2)));
+                viewProducto.jtf_marca.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 3)));
+                viewProducto.jtf_precio_venta.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 4)));
+                viewProducto.jtf_unidad_medida.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 5)));
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+    };
 }
