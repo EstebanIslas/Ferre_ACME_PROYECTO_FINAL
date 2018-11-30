@@ -14,16 +14,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author EstebanIslas
  */
-public class ModelUsuario extends Conexion {
+public class ModelClientes extends Conexion {
 
     private Connection conexion;
     private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
 
-    private int usuario_id;
-    private int sucursal_id;
-    private String tipo;
+    private int cliente_id;
+    private int descuento_id;
     private String nombre;
     private String apellido_paterno;
     private String apellido_materno;
@@ -37,35 +36,26 @@ public class ModelUsuario extends Conexion {
     private String email;
     private String ciudad;
     private String estado;
-    private String numero_seguro;
-    private String curp;
-    private String password;
+    private String fecha_creacion;
+    private double total_acumulado;
 
     private String descicion = "";
     private DefaultTableModel modelo = new DefaultTableModel();
 
-    public int getUsuario_id() {
-        return usuario_id;
+    public int getCliente_id() {
+        return cliente_id;
     }
 
-    public void setUsuario_id(int usuario_id) {
-        this.usuario_id = usuario_id;
+    public void setCliente_id(int cliente_id) {
+        this.cliente_id = cliente_id;
     }
 
-    public int getSucursal_id() {
-        return sucursal_id;
+    public int getDescuento_id() {
+        return descuento_id;
     }
 
-    public void setSucursal_id(int sucursal_id) {
-        this.sucursal_id = sucursal_id;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setDescuento_id(int descuento_id) {
+        this.descuento_id = descuento_id;
     }
 
     public String getNombre() {
@@ -172,28 +162,20 @@ public class ModelUsuario extends Conexion {
         this.estado = estado;
     }
 
-    public String getNumero_seguro() {
-        return numero_seguro;
+    public String getFecha_creacion() {
+        return fecha_creacion;
     }
 
-    public void setNumero_seguro(String numero_seguro) {
-        this.numero_seguro = numero_seguro;
+    public void setFecha_creacion(String fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
     }
 
-    public String getCurp() {
-        return curp;
+    public double getTotal_acumulado() {
+        return total_acumulado;
     }
 
-    public void setCurp(String curp) {
-        this.curp = curp;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setTotal_acumulado(double total_acumulado) {
+        this.total_acumulado = total_acumulado;
     }
 
     public String getDescicion() {
@@ -212,10 +194,10 @@ public class ModelUsuario extends Conexion {
         this.modelo = modelo;
     }
 
-    public void consultaUsuario() {
+    public void consultaCliente() {
         try {
             conexion = getConexion();
-            ps = conexion.prepareStatement("Select * from usuario");
+            ps = conexion.prepareStatement("Select * from clientes");
             rs = ps.executeQuery();
             rs.next();
 
@@ -228,9 +210,8 @@ public class ModelUsuario extends Conexion {
 
     public void setValues() {
         try {
-            usuario_id = rs.getInt("usuario_id");
-            sucursal_id = rs.getInt("sucursal_id");
-            tipo = rs.getString("tipo");
+            cliente_id = rs.getInt("clienteid");
+            descuento_id = rs.getInt("descuentoid");
             nombre = rs.getString("nombre");
             apellido_paterno = rs.getString("apellido_paterno");
             apellido_materno = rs.getString("apellido_materno");
@@ -238,15 +219,14 @@ public class ModelUsuario extends Conexion {
             rfc = rs.getString("rfc");
             calle = rs.getString("calle");
             colonia = rs.getString("colonia");
-            num_interior = rs.getString("num_interior");
-            num_exterior = rs.getString("num_exterior");
+            num_interior = rs.getString("numero_interior");
+            num_exterior = rs.getString("numero_exterior");
             codigo_postal = rs.getString("codigo_postal");
             email = rs.getString("email");
             ciudad = rs.getString("ciudad");
             estado = rs.getString("estado");
-            numero_seguro = rs.getString("numero_seguro");
-            curp = rs.getString("curp");
-            password = rs.getString("password");
+            fecha_creacion = rs.getString("fecha_creacion");
+            total_acumulado = rs.getDouble("total_acumulado");
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error Model-setValues 001 " + ex.getMessage());
@@ -324,36 +304,34 @@ public class ModelUsuario extends Conexion {
 
     }
 
-    public void guardarRegistro(int usuario_id, int sucursal_id, String tipo, String nombre, String ape_pat, String ape_mat, String telefono, String rfc, String calle, String colonia, String num_inte, String num_exte, String codigo_post, String email, String ciudad, String estado, String num_seguro, String curp, String password) {
+    public void guardarRegistro(int clienteid, int descuentoid, String nombre, String ape_pat, String ape_mat, String telefono, String rfc, String calle, String colonia, String num_inte, String num_exte, String codigo_post, String email, String ciudad, String estado, String fecha, Double total_acumu) {
         if (this.getDescicion() == "nuevo") {
             try {
 
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("Insert into usuario (sucursal_id, tipo, nombre, apellido_paterno, apellido_materno, telefono, rfc, calle, colonia, num_interior, num_exterior, codigo_postal, email, ciudad, estado, numero_seguro, curp, password) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+                ps = conexion.prepareStatement("Insert into clientes (descuentoid, nombre, apellido_paterno, apellido_materno, telefono, rfc, calle, colonia, numero_interior, numero_exterior, codigo_postal, email, ciudad, estado, fecha_creacion, total_acumulado) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 
-                ps.setInt(1, sucursal_id);
-                ps.setString(2, tipo);
-                ps.setString(3, nombre);
-                ps.setString(4, ape_pat);
-                ps.setString(5, ape_mat);
-                ps.setString(6, telefono);
-                ps.setString(7, rfc);
-                ps.setString(8, calle);
-                ps.setString(9, colonia);
-                ps.setString(10, num_inte);
-                ps.setString(11, num_exte);
-                ps.setString(12, codigo_post);
-                ps.setString(13, email);
-                ps.setString(14, ciudad);
-                ps.setString(15, estado);
-                ps.setString(16, num_seguro);
-                ps.setString(17, curp);
-                ps.setString(18, password);
+                ps.setInt(1, descuentoid);
+                ps.setString(2, nombre);
+                ps.setString(3, ape_pat);
+                ps.setString(4, ape_mat);
+                ps.setString(5, telefono);
+                ps.setString(6, rfc);
+                ps.setString(7, calle);
+                ps.setString(8, colonia);
+                ps.setString(9, num_inte);
+                ps.setString(10, num_exte);
+                ps.setString(11, codigo_post);
+                ps.setString(12, email);
+                ps.setString(13, ciudad);
+                ps.setString(14, estado);
+                ps.setString(15, fecha);
+                ps.setDouble(16, total_acumu);
 
                 int res = ps.executeUpdate();
 
-                consultaUsuario();
+                consultaCliente();
                 if (res > 0) {
                     JOptionPane.showMessageDialog(null, "Registro guardado Exitosamente!!");
                 } else {
@@ -367,32 +345,29 @@ public class ModelUsuario extends Conexion {
 
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("update usuario set sucursal_id=?, tipo=?, nombre=?, apellido_paterno=?, apellido_materno=?, telefono=?, rfc=?, calle=?, colonia=?, num_interior=?, num_exterior=?, codigo_postal=?, email=?, ciudad=?, estado=?, numero_seguro=?, curp=?, password=? where usuario_id=?;");
+                ps = conexion.prepareStatement("Update clientes set descuentoid=?, nombre=?, apellido_paterno=?, apellido_materno=?, telefono=?, rfc=?, calle=?, colonia=?, numero_interior=?, numero_exterior=?, codigo_postal=?, email=?, ciudad=?, estado=?, fecha_creacion=?, total_acumulado=? Where clienteid=?");
 
-                ps.setInt(1, sucursal_id);
-                ps.setString(2, tipo);
-                ps.setString(3, nombre);
-                ps.setString(4, ape_pat);
-                ps.setString(5, ape_mat);
-                ps.setString(6, telefono);
-                ps.setString(7, rfc);
-                ps.setString(8, calle);
-                ps.setString(9, colonia);
-                ps.setString(10, num_inte);
-                ps.setString(11, num_exte);
-                ps.setString(12, codigo_post);
-                ps.setString(13, email);
-                ps.setString(14, ciudad);
-                ps.setString(15, estado);
-                ps.setString(16, num_seguro);
-                ps.setString(17, curp);
-                ps.setString(18, password);
-
-                ps.setInt(19, usuario_id);
+                ps.setInt(1, descuentoid);
+                ps.setString(2, nombre);
+                ps.setString(3, ape_pat);
+                ps.setString(4, ape_mat);
+                ps.setString(5, telefono);
+                ps.setString(6, rfc);
+                ps.setString(7, calle);
+                ps.setString(8, colonia);
+                ps.setString(9, num_inte);
+                ps.setString(10, num_exte);
+                ps.setString(11, codigo_post);
+                ps.setString(12, email);
+                ps.setString(13, ciudad);
+                ps.setString(14, estado);
+                ps.setString(15, fecha);
+                ps.setDouble(16, total_acumu);
+                ps.setInt(17, clienteid);
 
                 int res = ps.executeUpdate();
 
-                consultaUsuario();
+                consultaCliente();
                 if (res > 0) {
                     JOptionPane.showMessageDialog(null, "Registro actualizado Exitosamente!!");
                 } else {
@@ -403,19 +378,19 @@ public class ModelUsuario extends Conexion {
             }
         }
     }
-
-    public void borrarRegistro(int usuario_id) {
+    
+    public void borrarRegistro(int clienteid) {
         int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este dato?", "Alerta!", JOptionPane.YES_NO_OPTION);
         if (resp == JOptionPane.YES_OPTION) {
             try {
                 //System.out.println("Elimina un registro");
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("DELETE FROM usuario WHERE usuario_id=?");
-                ps.setInt(1, usuario_id);
+                ps = conexion.prepareStatement("DELETE FROM cliente WHERE clienteid=?");
+                ps.setInt(1, clienteid);
 
                 int res = ps.executeUpdate();
-                consultaUsuario();
+                consultaCliente();
 
                 if (res > 0) {
                     JOptionPane.showMessageDialog(null, "Registro eliminado Exitosamente!!");
@@ -430,16 +405,15 @@ public class ModelUsuario extends Conexion {
             JOptionPane.showMessageDialog(null, "Accion Cancelada!!");
         }
     }
-
-    public void columnasTabla() {
-        modelo.addColumn("Id");
-        modelo.addColumn("Suc Id");
-        modelo.addColumn("Tipo");
+    
+    public void columnasTabla(){
+        modelo.addColumn("ID");
+        modelo.addColumn("DescuentoID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Paterno");
         modelo.addColumn("Materno");
         modelo.addColumn("Telefono");
-        modelo.addColumn("RFC");
+        modelo.addColumn("RFC    ");
         modelo.addColumn("Calle");
         modelo.addColumn("Colonia");
         modelo.addColumn("Num Int");
@@ -448,12 +422,11 @@ public class ModelUsuario extends Conexion {
         modelo.addColumn("Email");
         modelo.addColumn("Ciudad");
         modelo.addColumn("Estado");
-        modelo.addColumn("Imss");
-        modelo.addColumn("Curp");
-        modelo.addColumn("Passwd");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Total Acum");
     }
-
-    public void agregaraTabla() {
+    
+    public void agregaraTabla(){
         try {
             String[] datos = new String[19];
             rs.first();
@@ -476,8 +449,6 @@ public class ModelUsuario extends Conexion {
                 datos[14] = rs.getString(15);
                 datos[15] = rs.getString(16);
                 datos[16] = rs.getString(17);
-                datos[17] = rs.getString(18);
-                datos[18] = rs.getString(19);
 
                 modelo.addRow(datos);
             } while (rs.next());
@@ -488,7 +459,7 @@ public class ModelUsuario extends Conexion {
             JOptionPane.showMessageDialog(null, "Error en Tabla!! " + ex.getMessage());
         }
     }
-
+    
     public void limpiarTabla() {
         int a = modelo.getRowCount();
         for (int i = 0; i < a; i++) {
@@ -508,7 +479,7 @@ public class ModelUsuario extends Conexion {
             conexion = null;
             conexion = getConexion();
 
-            ps = conexion.prepareStatement("SELECT * FROM usuario where nombre like '%" + buscar + "%' Or tipo like '%" + buscar + "%';");
+            ps = conexion.prepareStatement("SELECT * FROM cliente where nombre like '%" + buscar + "%' Or rfc like '%" + buscar + "%';");
             rs = ps.executeQuery();
 
             //System.out.println("Consulta");

@@ -223,7 +223,7 @@ public class ControllerUsuario implements KeyListener{
      */
     public void jbtn_guardar_actionPerformed() {
 
-        modelUsuario.guardarRegistro(Integer.parseInt(viewUsuario.jtf_usuario_id.getText()), Integer.parseInt(viewUsuario.jtf_sucursal_id.getText()), viewUsuario.jtf_tipo.getText(), viewUsuario.jtf_nombre.getText(), viewUsuario.jtf_apellido_paterno.getText(), viewUsuario.jtf_apellido_materno.getText(), viewUsuario.jtf_telefono.getText(), viewUsuario.jtf_rfc.getText(), viewUsuario.jtf_calle.getText(), viewUsuario.jtf_colonia.getText(), viewUsuario.jtf_num_interno.getText(), viewUsuario.jtf_num_externo.getText(), viewUsuario.jtf_codigo_postal.getText(), viewUsuario.jtf_email.getText(), viewUsuario.jtf_ciudad.getText(), viewUsuario.jtf_estado.getText(), Integer.parseInt(viewUsuario.jtf_numero_seguro.getText()), viewUsuario.jtf_curp.getText(), viewUsuario.jtf_password.getText());
+        modelUsuario.guardarRegistro(Integer.parseInt(viewUsuario.jtf_usuario_id.getText()), Integer.parseInt(viewUsuario.jtf_sucursal_id.getText()), viewUsuario.jtf_tipo.getText(), viewUsuario.jtf_nombre.getText(), viewUsuario.jtf_apellido_paterno.getText(), viewUsuario.jtf_apellido_materno.getText(), viewUsuario.jtf_telefono.getText(), viewUsuario.jtf_rfc.getText(), viewUsuario.jtf_calle.getText(), viewUsuario.jtf_colonia.getText(), viewUsuario.jtf_num_interno.getText(), viewUsuario.jtf_num_externo.getText(), viewUsuario.jtf_codigo_postal.getText(), viewUsuario.jtf_email.getText(), viewUsuario.jtf_ciudad.getText(), viewUsuario.jtf_estado.getText(), viewUsuario.jtf_numero_seguro.getText(), viewUsuario.jtf_curp.getText(), viewUsuario.jtf_password.getText());
 
         habilitarCajas(false);
         habilitarDesplazamiento(true);
@@ -287,7 +287,7 @@ public class ControllerUsuario implements KeyListener{
     @Override
     public void keyTyped(KeyEvent e) {
         if(viewUsuario.jtf_buscar.hasFocus()){
-            modelUsuario.columnasTabla();
+            modelUsuario.limpiarTabla();
             modelUsuario.buscarTabla(viewUsuario.jtf_buscar.getText());
             modelUsuario.agregaraTabla();
         }

@@ -9,12 +9,12 @@ package views;
  *
  * @author USUARIO
  */
-public class ViewUsuario extends javax.swing.JPanel {
+public class ViewClientes extends javax.swing.JPanel {
 
     /**
-     * Creates new form ViewUsuario
+     * Creates new form ViewClientes
      */
-    public ViewUsuario() {
+    public ViewClientes() {
         initComponents();
     }
 
@@ -32,12 +32,10 @@ public class ViewUsuario extends javax.swing.JPanel {
         jl_titulo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jl_usuario_id = new javax.swing.JLabel();
-        jtf_usuario_id = new javax.swing.JTextField();
-        jl_sucursal_id = new javax.swing.JLabel();
-        jtf_sucursal_id = new javax.swing.JTextField();
-        jl_tipo = new javax.swing.JLabel();
-        jtf_tipo = new javax.swing.JTextField();
+        jl_cliente_id = new javax.swing.JLabel();
+        jtf_cliente_id = new javax.swing.JTextField();
+        jl_descuento_id = new javax.swing.JLabel();
+        jtf_descuento_id = new javax.swing.JTextField();
         jl_nombre = new javax.swing.JLabel();
         jtf_nombre = new javax.swing.JTextField();
         jl_apellido_paterno = new javax.swing.JLabel();
@@ -64,12 +62,10 @@ public class ViewUsuario extends javax.swing.JPanel {
         jtf_ciudad = new javax.swing.JTextField();
         jl_estado = new javax.swing.JLabel();
         jtf_estado = new javax.swing.JTextField();
-        jl_numero_seguro = new javax.swing.JLabel();
-        jtf_numero_seguro = new javax.swing.JTextField();
-        jl_curp = new javax.swing.JLabel();
-        jtf_curp = new javax.swing.JTextField();
-        jl_password = new javax.swing.JLabel();
-        jtf_password = new javax.swing.JTextField();
+        jl_fecha_creacion = new javax.swing.JLabel();
+        jtf_fecha_creacion = new javax.swing.JTextField();
+        jl_total_acumulado = new javax.swing.JLabel();
+        jtf_total_acumulado = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jb_editar = new javax.swing.JButton();
@@ -84,7 +80,7 @@ public class ViewUsuario extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jtf_buscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtb_tabla_usuario = new javax.swing.JTable();
+        jtb_tabla_clientes = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         jb_siguiente = new javax.swing.JButton();
         jb_ultimo = new javax.swing.JButton();
@@ -95,33 +91,27 @@ public class ViewUsuario extends javax.swing.JPanel {
 
         jl_logo_empresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/debug_ware (1).png"))); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/man.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente.png"))); // NOI18N
 
         jl_titulo.setFont(new java.awt.Font("Arial", 1, 33)); // NOI18N
         jl_titulo.setForeground(new java.awt.Color(255, 255, 255));
-        jl_titulo.setText("USUARIOS");
+        jl_titulo.setText("CLIENTES");
 
         jPanel1.setBackground(new java.awt.Color(244, 244, 244));
 
         jPanel2.setBackground(new java.awt.Color(244, 244, 244));
 
-        jl_usuario_id.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_usuario_id.setText("USUARIO ID:");
+        jl_cliente_id.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jl_cliente_id.setText("CLIENTE ID:");
 
-        jtf_usuario_id.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_usuario_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jtf_cliente_id.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_cliente_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
-        jl_sucursal_id.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_sucursal_id.setText("SUCURSAL ID:");
+        jl_descuento_id.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jl_descuento_id.setText("DESCUENTO ID:");
 
-        jtf_sucursal_id.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_sucursal_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-
-        jl_tipo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_tipo.setText("TIPO:");
-
-        jtf_tipo.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_tipo.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jtf_descuento_id.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_descuento_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         jl_nombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_nombre.setText("NOMBRE:");
@@ -201,23 +191,17 @@ public class ViewUsuario extends javax.swing.JPanel {
         jtf_estado.setBackground(new java.awt.Color(244, 244, 244));
         jtf_estado.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
-        jl_numero_seguro.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_numero_seguro.setText("NUMERO IMSS:");
+        jl_fecha_creacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jl_fecha_creacion.setText("FECHA CREACIÓN:");
 
-        jtf_numero_seguro.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_numero_seguro.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jtf_fecha_creacion.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_fecha_creacion.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
-        jl_curp.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_curp.setText("CURP:");
+        jl_total_acumulado.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jl_total_acumulado.setText("TOTAL ACUMULADO:");
 
-        jtf_curp.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_curp.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-
-        jl_password.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_password.setText("PASSWORD:");
-
-        jtf_password.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_password.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jtf_total_acumulado.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_total_acumulado.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -227,19 +211,16 @@ public class ViewUsuario extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jl_usuario_id)
+                        .addComponent(jl_cliente_id)
                         .addGap(56, 56, 56)
-                        .addComponent(jtf_usuario_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtf_cliente_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jl_colonia)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jl_sucursal_id)
-                            .addComponent(jl_tipo)
-                            .addComponent(jl_nombre)
-                            .addComponent(jl_apellido_paterno)
+                            .addComponent(jl_descuento_id)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jl_calle)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -253,28 +234,26 @@ public class ViewUsuario extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jl_apellido_materno)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jl_apellido_materno)
+                                    .addComponent(jl_nombre)
+                                    .addComponent(jl_apellido_paterno))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jtf_apellido_paterno, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jtf_apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_descuento_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(58, 58, 58)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jl_password)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jl_curp)
+                                .addComponent(jl_total_acumulado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtf_curp, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_total_acumulado, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jl_numero_seguro)
+                                .addComponent(jl_fecha_creacion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtf_numero_seguro, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_fecha_creacion, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jl_estado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -306,65 +285,58 @@ public class ViewUsuario extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_usuario_id)
-                    .addComponent(jtf_usuario_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jl_cliente_id)
+                    .addComponent(jtf_cliente_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_sucursal_id)
+                    .addComponent(jl_descuento_id)
                     .addComponent(jl_num_interno)
                     .addComponent(jtf_num_interno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_descuento_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_tipo)
                     .addComponent(jl_num_externo)
                     .addComponent(jtf_num_externo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_nombre)
-                    .addComponent(jl_codigo_postal)
-                    .addComponent(jtf_codigo_postal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_codigo_postal)
+                    .addComponent(jtf_codigo_postal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_apellido_paterno)
-                    .addComponent(jtf_apellido_paterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_email)
-                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jtf_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jl_ciudad))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jl_apellido_materno)
-                        .addComponent(jtf_apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jtf_apellido_paterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_telefono)
+                    .addComponent(jl_email)
+                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_apellido_materno)
+                    .addComponent(jtf_apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtf_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jl_ciudad)
+                        .addComponent(jl_telefono)
+                        .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_estado)
                     .addComponent(jtf_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_rfc)
-                    .addComponent(jl_numero_seguro)
-                    .addComponent(jtf_numero_seguro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_fecha_creacion)
+                    .addComponent(jtf_fecha_creacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_calle)
-                    .addComponent(jl_curp)
-                    .addComponent(jtf_curp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_total_acumulado)
+                    .addComponent(jtf_total_acumulado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_colonia)
-                    .addComponent(jl_password)
-                    .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(244, 244, 244));
@@ -489,7 +461,7 @@ public class ViewUsuario extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jtb_tabla_usuario.setModel(new javax.swing.table.DefaultTableModel(
+        jtb_tabla_clientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -500,7 +472,7 @@ public class ViewUsuario extends javax.swing.JPanel {
 
             }
         ));
-        jScrollPane1.setViewportView(jtb_tabla_usuario);
+        jScrollPane1.setViewportView(jtb_tabla_clientes);
 
         jPanel8.setBackground(new java.awt.Color(244, 244, 244));
 
@@ -568,32 +540,31 @@ public class ViewUsuario extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(378, 378, 378)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(376, 376, 376)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(48, 48, 48)
+                .addGap(35, 35, 35)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -605,7 +576,7 @@ public class ViewUsuario extends javax.swing.JPanel {
                 .addComponent(jl_logo_empresa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jl_titulo)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -619,9 +590,9 @@ public class ViewUsuario extends javax.swing.JPanel {
                         .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1))
                     .addComponent(jl_logo_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -652,43 +623,39 @@ public class ViewUsuario extends javax.swing.JPanel {
     public javax.swing.JLabel jl_apellido_paterno;
     public javax.swing.JLabel jl_calle;
     public javax.swing.JLabel jl_ciudad;
+    public javax.swing.JLabel jl_cliente_id;
     public javax.swing.JLabel jl_codigo_postal;
     public javax.swing.JLabel jl_colonia;
-    public javax.swing.JLabel jl_curp;
+    public javax.swing.JLabel jl_descuento_id;
     public javax.swing.JLabel jl_email;
     public javax.swing.JLabel jl_estado;
+    public javax.swing.JLabel jl_fecha_creacion;
     private javax.swing.JLabel jl_logo_empresa;
     public javax.swing.JLabel jl_nombre;
     public javax.swing.JLabel jl_num_externo;
     public javax.swing.JLabel jl_num_interno;
-    public javax.swing.JLabel jl_numero_seguro;
-    public javax.swing.JLabel jl_password;
     public javax.swing.JLabel jl_rfc;
-    public javax.swing.JLabel jl_sucursal_id;
     public javax.swing.JLabel jl_telefono;
-    public javax.swing.JLabel jl_tipo;
     private javax.swing.JLabel jl_titulo;
-    public javax.swing.JLabel jl_usuario_id;
-    public javax.swing.JTable jtb_tabla_usuario;
+    public javax.swing.JLabel jl_total_acumulado;
+    public javax.swing.JTable jtb_tabla_clientes;
     public javax.swing.JTextField jtf_apellido_materno;
     public javax.swing.JTextField jtf_apellido_paterno;
     public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_calle;
     public javax.swing.JTextField jtf_ciudad;
+    public javax.swing.JTextField jtf_cliente_id;
     public javax.swing.JTextField jtf_codigo_postal;
     public javax.swing.JTextField jtf_colonia;
-    public javax.swing.JTextField jtf_curp;
+    public javax.swing.JTextField jtf_descuento_id;
     public javax.swing.JTextField jtf_email;
     public javax.swing.JTextField jtf_estado;
+    public javax.swing.JTextField jtf_fecha_creacion;
     public javax.swing.JTextField jtf_nombre;
     public javax.swing.JTextField jtf_num_externo;
     public javax.swing.JTextField jtf_num_interno;
-    public javax.swing.JTextField jtf_numero_seguro;
-    public javax.swing.JTextField jtf_password;
     public javax.swing.JTextField jtf_rfc;
-    public javax.swing.JTextField jtf_sucursal_id;
     public javax.swing.JTextField jtf_telefono;
-    public javax.swing.JTextField jtf_tipo;
-    public javax.swing.JTextField jtf_usuario_id;
+    public javax.swing.JTextField jtf_total_acumulado;
     // End of variables declaration//GEN-END:variables
 }

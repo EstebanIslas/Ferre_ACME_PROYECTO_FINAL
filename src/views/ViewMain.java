@@ -37,6 +37,7 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_proveedores = new javax.swing.JMenuItem();
         jmi_descuentos = new javax.swing.JMenuItem();
         jmi_usuarios = new javax.swing.JMenuItem();
+        jmi_clientes = new javax.swing.JMenuItem();
         jmi_compra = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,6 +108,9 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_usuarios.setText("USUARIOS");
         jmenu.add(jmi_usuarios);
 
+        jmi_clientes.setText("CLIENTES");
+        jmenu.add(jmi_clientes);
+
         jmi_compra.setText("COMPRAS");
         jmenu.add(jmi_compra);
 
@@ -171,6 +175,7 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JLabel jl_img_logo;
     public javax.swing.JMenu jmenu;
     private javax.swing.JMenuBar jmenu_menu;
+    public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_compra;
     public javax.swing.JMenuItem jmi_descuentos;
     public javax.swing.JMenuItem jmi_productos;

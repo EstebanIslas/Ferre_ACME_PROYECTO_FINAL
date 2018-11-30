@@ -26,7 +26,7 @@
               <Component id="jl_logo_empresa" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jl_titulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -38,15 +38,15 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Component id="jl_titulo" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jl_logo_empresa" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="jl_logo_empresa" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,7 +62,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/man.png"/>
+          <Image iconType="3" name="/imagenes/cliente.png"/>
         </Property>
       </Properties>
     </Component>
@@ -74,7 +74,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="USUARIOS"/>
+        <Property name="text" type="java.lang.String" value="CLIENTES"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -88,40 +88,37 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="378" max="-2" attributes="0"/>
-                          <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="87" max="32767" attributes="0"/>
+                          <Component id="jPanel3" min="-2" pref="204" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="79" max="32767" attributes="0"/>
-                                  <Component id="jPanel3" min="-2" pref="204" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
+                      <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="376" max="-2" attributes="0"/>
+                  <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jPanel2" max="32767" attributes="0"/>
                       <Component id="jPanel3" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="94" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -137,13 +134,13 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jl_usuario_id" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_cliente_id" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="jtf_usuario_id" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="jtf_cliente_id" min="-2" pref="148" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -152,10 +149,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jtf_colonia" min="-2" pref="148" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jl_sucursal_id" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jl_tipo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jl_nombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jl_apellido_paterno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jl_descuento_id" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jl_calle" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -172,33 +166,31 @@
                                       <Component id="jtf_telefono" min="-2" pref="148" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jl_apellido_materno" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jl_apellido_materno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jl_nombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jl_apellido_paterno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jtf_apellido_paterno" min="-2" pref="148" max="-2" attributes="0"/>
-                                          <Component id="jtf_apellido_materno" min="-2" pref="148" max="-2" attributes="0"/>
-                                          <Component id="jtf_nombre" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                                          <Component id="jtf_tipo" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                                          <Component id="jtf_sucursal_id" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                                          <Component id="jtf_nombre" min="-2" pref="148" max="-2" attributes="0"/>
+                                          <Component id="jtf_apellido_materno" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                                          <Component id="jtf_descuento_id" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jl_password" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jl_total_acumulado" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jtf_password" min="-2" pref="148" max="-2" attributes="0"/>
+                                      <Component id="jtf_total_acumulado" min="-2" pref="148" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jl_curp" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jl_fecha_creacion" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jtf_curp" min="-2" pref="148" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jl_numero_seguro" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jtf_numero_seguro" min="-2" pref="148" max="-2" attributes="0"/>
+                                      <Component id="jtf_fecha_creacion" min="-2" pref="148" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jl_estado" min="-2" max="-2" attributes="0"/>
@@ -242,94 +234,85 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jl_usuario_id" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_usuario_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jl_cliente_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_cliente_id" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jl_sucursal_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jl_descuento_id" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jl_num_interno" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_num_interno" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_sucursal_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_descuento_id" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jl_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jl_num_externo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_num_externo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jl_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jl_codigo_postal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_codigo_postal" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jl_codigo_postal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_codigo_postal" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jl_apellido_paterno" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_apellido_paterno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jl_email" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jl_apellido_materno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_apellido_materno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="jtf_ciudad" min="-2" max="-2" attributes="0"/>
-                              <Component id="jl_ciudad" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jl_apellido_materno" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtf_apellido_materno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jtf_ciudad" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="jl_ciudad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtf_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jl_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jl_estado" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_estado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jl_rfc" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jl_numero_seguro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_numero_seguro" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_rfc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jl_fecha_creacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_fecha_creacion" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jl_calle" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jl_curp" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_curp" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_calle" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jl_total_acumulado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_total_acumulado" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jl_colonia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jl_password" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_password" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_colonia" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <EmptySpace pref="73" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jl_usuario_id">
+            <Component class="javax.swing.JLabel" name="jl_cliente_id">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="USUARIO ID:"/>
+                <Property name="text" type="java.lang.String" value="CLIENTE ID:"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jtf_usuario_id">
+            <Component class="javax.swing.JTextField" name="jtf_cliente_id">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f4" green="f4" red="f4" type="rgb"/>
@@ -342,42 +325,18 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jl_sucursal_id">
+            <Component class="javax.swing.JLabel" name="jl_descuento_id">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="SUCURSAL ID:"/>
+                <Property name="text" type="java.lang.String" value="DESCUENTO ID:"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jtf_sucursal_id">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f4" green="f4" red="f4" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="13" style="0"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jl_tipo">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="TIPO:"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jtf_tipo">
+            <Component class="javax.swing.JTextField" name="jtf_descuento_id">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f4" green="f4" red="f4" type="rgb"/>
@@ -702,18 +661,18 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jl_numero_seguro">
+            <Component class="javax.swing.JLabel" name="jl_fecha_creacion">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="NUMERO IMSS:"/>
+                <Property name="text" type="java.lang.String" value="FECHA CREACI&#xd3;N:"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jtf_numero_seguro">
+            <Component class="javax.swing.JTextField" name="jtf_fecha_creacion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f4" green="f4" red="f4" type="rgb"/>
@@ -726,42 +685,18 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jl_curp">
+            <Component class="javax.swing.JLabel" name="jl_total_acumulado">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CURP:"/>
+                <Property name="text" type="java.lang.String" value="TOTAL ACUMULADO:"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jtf_curp">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f4" green="f4" red="f4" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="13" style="0"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jl_password">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PASSWORD:"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jtf_password">
+            <Component class="javax.swing.JTextField" name="jtf_total_acumulado">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f4" green="f4" red="f4" type="rgb"/>
@@ -1047,7 +982,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jtb_tabla_usuario">
+            <Component class="javax.swing.JTable" name="jtb_tabla_clientes">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="0" rowCount="4"/>

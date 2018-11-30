@@ -90,7 +90,7 @@ public class ControllerDescuento implements KeyListener {
 
         llenarTabla();
 
-        this.viewDescuento.addKeyListener(this);
+        this.viewDescuento.jtf_buscar.addKeyListener(this);
     }
 
     private void getValues() {
