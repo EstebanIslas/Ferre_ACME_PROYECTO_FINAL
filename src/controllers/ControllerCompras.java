@@ -40,7 +40,10 @@ public class ControllerCompras implements KeyListener{
     ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            if(e.getSource() == viewCompras.jb_agregar){
+                System.out.println("Agregar productos");
+                agregarProductos();
+            }
         }
     };
 
@@ -63,16 +66,18 @@ public class ControllerCompras implements KeyListener{
         this.viewCompras = viewCompras;
         this.viewCompras.jtb_productos.addMouseListener(mouseListener);
         initComponents();
+        setActionListener();
         llenarTablaProductos();
         this.viewCompras.jtf_buscar.addKeyListener(this);
     }
     
     private void setActionListener(){
-        
+        viewCompras.jb_agregar.addActionListener(actionListener);
     }
     
     private void initComponents(){
         modelCompras.consultaProductosCompras();
+        modelCompras.columnasTablaDetalleCompra();
     }
     
     public void llenarTablaProductos(){
@@ -81,4 +86,9 @@ public class ControllerCompras implements KeyListener{
         modelCompras.agregaraTablaProducto();
     }
     
+    private void agregarProductos(){
+        viewCompras.jtb_detalle_compra.setModel(modelCompras.getTb_detalle_compra());
+        modelCompras.agregarProductosaDetalle(viewCompras.jtf_nombre_producto.getText(), viewCompras.jtf_precio_compra.getText(), String.valueOf(viewCompras.jsp_cantidad.getValue()));
+        
+    }
 }

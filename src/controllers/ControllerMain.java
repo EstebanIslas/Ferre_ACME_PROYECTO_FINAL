@@ -28,6 +28,7 @@ public class ControllerMain {
     private ControllerProveedores controllerProveedores;
     private ControllerCompras controllerCompras;
     private ControllerDescuento controllerDescuento;
+    private ControllerUsuario controllerUsuario;
 
     public ControllerMain(ModelMain modelMain, ViewMain viewMain, Object[] controllers) {
         this.modelMain = modelMain;
@@ -56,6 +57,9 @@ public class ControllerMain {
             else if(e.getSource() == viewMain.jmi_descuentos){
                 jmi_Descuentos_actionPerformed();
             }
+            else if(e.getSource() == viewMain.jmi_usuarios){
+                jmi_Usuarios_actionPerformed();
+            }
             
         }
     };
@@ -71,6 +75,7 @@ public class ControllerMain {
         controllerProveedores = (ControllerProveedores) controllers[2];
         controllerCompras = (ControllerCompras) controllers[3];
         controllerDescuento = (ControllerDescuento) controllers[4];
+        controllerUsuario = (ControllerUsuario) controllers[5];
     }
     
     private void initComponets() {
@@ -85,6 +90,7 @@ public class ControllerMain {
         viewMain.jmi_proveedores.addActionListener(actionListener);
         viewMain.jmi_compra.addActionListener(actionListener);
         viewMain.jmi_descuentos.addActionListener(actionListener);
+        viewMain.jmi_usuarios.addActionListener(actionListener);
     }
     
     private void jmi_Sucursales_actionPerformed(){
@@ -112,6 +118,12 @@ public class ControllerMain {
     
     private void jmi_Descuentos_actionPerformed(){
         viewMain.setContentPane(controllerDescuento.viewDescuento);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    
+    private void jmi_Usuarios_actionPerformed(){
+        viewMain.setContentPane(controllerUsuario.viewUsuario);
         viewMain.revalidate();
         viewMain.repaint();
     }

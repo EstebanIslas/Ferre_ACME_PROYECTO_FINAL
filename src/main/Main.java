@@ -29,6 +29,10 @@ import models.ModelCompras;
 import views.ViewCompras;
 import controllers.ControllerCompras;
 
+import models.ModelUsuario;
+import views.ViewUsuario;
+import controllers.ControllerUsuario;
+
 /**
  *
  * @author EstebanIslas
@@ -59,12 +63,17 @@ public class Main {
         ViewDescuento viewDescuento = new ViewDescuento();
         ControllerDescuento controllerDescuento = new ControllerDescuento(modelDescuento, viewDescuento);
         
-        Object[] controllers = new Object[5];
+        ModelUsuario modelUsuario = new ModelUsuario();
+        ViewUsuario viewUsuario = new ViewUsuario();
+        ControllerUsuario controllerUsuario = new ControllerUsuario(modelUsuario, viewUsuario);
+        
+        Object[] controllers = new Object[6];
         controllers[0] = controllerSucursal;
         controllers[1] = controllerProducto;
         controllers[2] = controllerProveedores;
         controllers[3] = controllerCompras;
         controllers[4] = controllerDescuento;
+        controllers[5] = controllerUsuario;
         
         
         ModelMain modelMain = new ModelMain();

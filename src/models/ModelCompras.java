@@ -159,6 +159,7 @@ public class ModelCompras extends Conexion{
     
     public void consultaProductosCompras(){
         try{
+            conexion = null;
             conexion = getConexion();
             ps = conexion.prepareStatement("SELECT productoid, nombre, tipo, marca FROM productos");
             rs = ps.executeQuery();
@@ -218,7 +219,39 @@ public class ModelCompras extends Conexion{
         }
         System.err.println("Limpio la tabla");
     }
+    
+    private DefaultTableModel tb_detalle_compra = new DefaultTableModel();
 
+    public DefaultTableModel getTb_detalle_compra() {
+        return tb_detalle_compra;
+    }
 
+    public void setTb_detalle_compra(DefaultTableModel tb_detalle_compra) {
+        this.tb_detalle_compra = tb_detalle_compra;
+    }
+    
+    
+    public void columnasTablaDetalleCompra() {
+        tb_detalle_compra.addColumn("Nombre");
+        tb_detalle_compra.addColumn("Precio");
+        tb_detalle_compra.addColumn("Cantidad");
+    }
+    
+    public void agregarProductosaDetalle(String nombre, String precio, String cantidad){
+        String[] dato = new String[4];
+        
+        try{
+        dato[0] = nombre;
+        double precios = Double.parseDouble(precio);
+        int canti = Integer.parseInt(cantidad);
+        Double subtotal = precios * canti;
+        dato[1] = String.valueOf(subtotal);
+        dato[2] = cantidad;
+        
+        tb_detalle_compra.addRow(dato);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error al agregar productos");
+        }
+    }
     
 }

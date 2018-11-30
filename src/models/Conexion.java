@@ -13,9 +13,9 @@ import java.util.logging.Logger;
  */
 public class Conexion {
     private final String base = "acme_db";
-    private final String user = "root";
-    private final String password = "";
-    private final String url = "jdbc:mysql://localhost:3306/" + base;
+    private final String user = "root"; //debugware
+    private final String password = ""; //t3relemento
+    private final String url = "jdbc:mysql://localhost:3306/" + base; //estebanisla.ddns.net
     private Connection conexion;
     
     public Connection getConexion(){
@@ -26,11 +26,11 @@ public class Conexion {
             
         } catch (ClassNotFoundException ex ) {
             
-            JOptionPane.showMessageDialog(null,"error en clase driver conexion" + ex.getMessage());
+            JOptionPane.showMessageDialog(null,"Error en Conexion: " + ex.getMessage());
             
         } catch (SQLException ex) {
             
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error SQL: " + ex.getMessage());
         }
         return conexion;
     }
