@@ -64,6 +64,10 @@ public class ControllerUsuario implements KeyListener{
         viewUsuario.jb_eliminar.addActionListener(actionListener);
         viewUsuario.jb_editar.addActionListener(actionListener);
         viewUsuario.jb_cancelar.addActionListener(actionListener);
+        
+        
+        ///
+        viewUsuario.jcb_sucursal_id.addActionListener(actionListener);
     }
     
     private void inicioCrud(){
@@ -72,6 +76,7 @@ public class ControllerUsuario implements KeyListener{
         viewUsuario.jb_eliminar.setEnabled(true);
         viewUsuario.jb_guardar.setEnabled(false);
         viewUsuario.jb_cancelar.setEnabled(false);
+        
     }
     
     private void initComponets(){
@@ -93,9 +98,13 @@ public class ControllerUsuario implements KeyListener{
     }
     
     private void getValues(){
+        //agregarSucursalId();
         viewUsuario.jtf_usuario_id.setText(String.valueOf(modelUsuario.getUsuario_id()));
-        viewUsuario.jtf_sucursal_id.setText(String.valueOf(modelUsuario.getSucursal_id()));
-        viewUsuario.jtf_tipo.setText(modelUsuario.getTipo());
+        //viewUsuario.jtf_sucursal_id.setText(String.valueOf(modelUsuario.getSucursal_id()));
+        viewUsuario.jcb_sucursal_id.removeAllItems();
+        viewUsuario.jcb_sucursal_id.addItem("" + modelUsuario.getSucursal_id());
+        //viewUsuario.jtf_tipo.setText(modelUsuario.getTipo());
+        viewUsuario.jcb_tipo.setSelectedItem(modelUsuario.getTipo());
         viewUsuario.jtf_nombre.setText(modelUsuario.getNombre());
         viewUsuario.jtf_apellido_paterno.setText(modelUsuario.getApellido_paterno());
         viewUsuario.jtf_apellido_materno.setText(modelUsuario.getApellido_materno());
@@ -115,8 +124,10 @@ public class ControllerUsuario implements KeyListener{
     }
     
     private void habilitarCajas(boolean desi){
-        viewUsuario.jtf_sucursal_id.setEditable(desi);
-        viewUsuario.jtf_tipo.setEditable(desi);
+        //viewUsuario.jtf_sucursal_id.setEditable(desi);
+        viewUsuario.jcb_sucursal_id.setEnabled(desi);
+        //viewUsuario.jtf_tipo.setEditable(desi);
+        viewUsuario.jcb_tipo.setEnabled(desi);
         viewUsuario.jtf_nombre.setEditable(desi);
         viewUsuario.jtf_apellido_paterno.setEditable(desi);
         viewUsuario.jtf_apellido_materno.setEditable(desi);
@@ -190,8 +201,10 @@ public class ControllerUsuario implements KeyListener{
         habilitarCajas(true);
         habilitarDesplazamiento(false);
         
-        viewUsuario.jtf_sucursal_id.setText("");
-        viewUsuario.jtf_tipo.setText("");
+        //viewUsuario.jtf_sucursal_id.setText("");
+        agregarSucursalId(); //Selecciona todas las ID de las sucursales existentes
+        //viewUsuario.jtf_tipo.setText("");
+        viewUsuario.jcb_tipo.setSelectedIndex(0);
         viewUsuario.jtf_nombre.setText("");
         viewUsuario.jtf_apellido_paterno.setText("");
         viewUsuario.jtf_apellido_materno.setText("");
@@ -223,7 +236,7 @@ public class ControllerUsuario implements KeyListener{
      */
     public void jbtn_guardar_actionPerformed() {
 
-        modelUsuario.guardarRegistro(Integer.parseInt(viewUsuario.jtf_usuario_id.getText()), Integer.parseInt(viewUsuario.jtf_sucursal_id.getText()), viewUsuario.jtf_tipo.getText(), viewUsuario.jtf_nombre.getText(), viewUsuario.jtf_apellido_paterno.getText(), viewUsuario.jtf_apellido_materno.getText(), viewUsuario.jtf_telefono.getText(), viewUsuario.jtf_rfc.getText(), viewUsuario.jtf_calle.getText(), viewUsuario.jtf_colonia.getText(), viewUsuario.jtf_num_interno.getText(), viewUsuario.jtf_num_externo.getText(), viewUsuario.jtf_codigo_postal.getText(), viewUsuario.jtf_email.getText(), viewUsuario.jtf_ciudad.getText(), viewUsuario.jtf_estado.getText(), viewUsuario.jtf_numero_seguro.getText(), viewUsuario.jtf_curp.getText(), viewUsuario.jtf_password.getText());
+        modelUsuario.guardarRegistro(Integer.parseInt(viewUsuario.jtf_usuario_id.getText()), Integer.parseInt(""+viewUsuario.jcb_sucursal_id.getSelectedItem()), String.valueOf(viewUsuario.jcb_tipo.getSelectedItem()), viewUsuario.jtf_nombre.getText(), viewUsuario.jtf_apellido_paterno.getText(), viewUsuario.jtf_apellido_materno.getText(), viewUsuario.jtf_telefono.getText(), viewUsuario.jtf_rfc.getText(), viewUsuario.jtf_calle.getText(), viewUsuario.jtf_colonia.getText(), viewUsuario.jtf_num_interno.getText(), viewUsuario.jtf_num_externo.getText(), viewUsuario.jtf_codigo_postal.getText(), viewUsuario.jtf_email.getText(), viewUsuario.jtf_ciudad.getText(), viewUsuario.jtf_estado.getText(), viewUsuario.jtf_numero_seguro.getText(), viewUsuario.jtf_curp.getText(), viewUsuario.jtf_password.getText());
 
         habilitarCajas(false);
         habilitarDesplazamiento(true);
@@ -283,7 +296,11 @@ public class ControllerUsuario implements KeyListener{
         viewUsuario.jtb_tabla_usuario.setModel(modelUsuario.getModelo());
         modelUsuario.agregaraTabla();
     }
-
+    
+    public void agregarSucursalId(){
+        modelUsuario.llenarComboBoxSucursales(viewUsuario.jcb_sucursal_id);
+    }
+    
     @Override
     public void keyTyped(KeyEvent e) {
         if(viewUsuario.jtf_buscar.hasFocus()){
@@ -304,8 +321,10 @@ public class ControllerUsuario implements KeyListener{
                 int seleccion = viewUsuario.jtb_tabla_usuario.getSelectedRow();
                 
                 viewUsuario.jtf_usuario_id.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 0)));
-                viewUsuario.jtf_sucursal_id.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 1)));
-                viewUsuario.jtf_tipo.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 2)));
+                //viewUsuario.jtf_sucursal_id.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 1)));
+                viewUsuario.jcb_sucursal_id.setSelectedItem(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 1)));
+                //viewUsuario.jtf_tipo.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 2)));
+                viewUsuario.jcb_tipo.setSelectedItem(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 2)));
                 viewUsuario.jtf_nombre.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 3)));
                 viewUsuario.jtf_apellido_paterno.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 4)));
                 viewUsuario.jtf_apellido_materno.setText(String.valueOf(viewUsuario.jtb_tabla_usuario.getValueAt(seleccion, 5)));

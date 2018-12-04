@@ -225,6 +225,26 @@ public class ModelUsuario extends Conexion {
             JOptionPane.showMessageDialog(null, "Error Model-Connection 000 " + ex.getMessage());
         }
     }
+    
+    public void llenarComboBoxSucursales(javax.swing.JComboBox idsucursal){
+        try{
+            conexion = getConexion();
+            ps = conexion.prepareStatement("Select sucursal_id from sucursal");
+            rs = ps.executeQuery();
+            rs.next();
+            
+            idsucursal.removeAllItems();
+            
+            do{
+                idsucursal.addItem("" + rs.getString("sucursal_id"));
+            }while(rs.next());
+            
+            idsucursal.setSelectedIndex(0); //Regresar al primer item que se registro
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error Model-Connection 000 " + ex.getMessage());
+        }
+    }
 
     public void setValues() {
         try {

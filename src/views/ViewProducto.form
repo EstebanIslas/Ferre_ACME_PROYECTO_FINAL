@@ -44,7 +44,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,10 +63,10 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="605" max="-2" attributes="0"/>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="124" max="32767" attributes="0"/>
+                  <EmptySpace pref="114" max="32767" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
@@ -544,18 +544,18 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <EmptySpace pref="265" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jl_producto_id" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jl_nombre" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jl_tipo" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jtf_tipo" alignment="0" pref="148" max="32767" attributes="0"/>
-                                  <Component id="jtf_nombre" alignment="0" pref="148" max="32767" attributes="0"/>
+                                  <Component id="jtf_tipos" alignment="0" pref="148" max="32767" attributes="0"/>
+                                  <Component id="jtf_nombre" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jtf_producto_id" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -566,10 +566,10 @@
                                   <Component id="jl_unidad_medida" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jtf_marca" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jtf_precio_venta" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jtf_unidad_medida" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jtf_marca" pref="148" max="32767" attributes="0"/>
+                                  <Component id="jtf_precio_venta" pref="148" max="32767" attributes="0"/>
+                                  <Component id="jcb_unidad_medida" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -593,7 +593,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jl_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_tipos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -607,10 +607,10 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jtf_unidad_medida" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jl_unidad_medida" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcb_unidad_medida" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <EmptySpace pref="33" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -675,7 +675,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jtf_tipo">
+            <Component class="javax.swing.JTextField" name="jtf_tipos">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f4" green="f4" red="f4" type="rgb"/>
@@ -736,19 +736,6 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jtf_unidad_medida">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f4" green="f4" red="f4" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="13" style="0"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="jl_unidad_medida">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -757,6 +744,30 @@
                 <Property name="text" type="java.lang.String" value="UNIDAD DE MEDIDA:"/>
               </Properties>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jcb_unidad_medida">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f4" green="f4" red="f4" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="13" style="0"/>
+                </Property>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="PZ"/>
+                    <StringItem index="1" value="LT"/>
+                    <StringItem index="2" value="GL"/>
+                    <StringItem index="3" value="CM"/>
+                    <StringItem index="4" value="MT"/>
+                    <StringItem index="5" value="GR"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>

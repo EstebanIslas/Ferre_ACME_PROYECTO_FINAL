@@ -54,13 +54,13 @@ public class ViewProducto extends javax.swing.JPanel {
         jl_nombre = new javax.swing.JLabel();
         jtf_nombre = new javax.swing.JTextField();
         jl_tipo = new javax.swing.JLabel();
-        jtf_tipo = new javax.swing.JTextField();
+        jtf_tipos = new javax.swing.JTextField();
         jl_marca = new javax.swing.JLabel();
         jtf_marca = new javax.swing.JTextField();
         jl_precio_venta = new javax.swing.JLabel();
         jtf_precio_venta = new javax.swing.JTextField();
-        jtf_unidad_medida = new javax.swing.JTextField();
         jl_unidad_medida = new javax.swing.JLabel();
+        jcb_unidad_medida = new javax.swing.JComboBox<>();
         jl_titulo = new javax.swing.JLabel();
         jl_tools_icon = new javax.swing.JLabel();
         jl_logo_empresa = new javax.swing.JLabel();
@@ -283,8 +283,8 @@ public class ViewProducto extends javax.swing.JPanel {
         jl_tipo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_tipo.setText("TIPO:");
 
-        jtf_tipo.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_tipo.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jtf_tipos.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_tipos.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         jl_marca.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_marca.setText("MARCA:");
@@ -298,28 +298,29 @@ public class ViewProducto extends javax.swing.JPanel {
         jtf_precio_venta.setBackground(new java.awt.Color(244, 244, 244));
         jtf_precio_venta.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
-        jtf_unidad_medida.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_unidad_medida.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-
         jl_unidad_medida.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_unidad_medida.setText("UNIDAD DE MEDIDA:");
+
+        jcb_unidad_medida.setBackground(new java.awt.Color(244, 244, 244));
+        jcb_unidad_medida.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jcb_unidad_medida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PZ", "LT", "GL", "CM", "MT", "GR" }));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(265, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_producto_id, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jl_nombre, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jl_tipo, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_producto_id)
+                            .addComponent(jl_nombre)
+                            .addComponent(jl_tipo))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtf_tipo, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                            .addComponent(jtf_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(jtf_tipos, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(jtf_nombre)
                             .addComponent(jtf_producto_id)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -327,10 +328,10 @@ public class ViewProducto extends javax.swing.JPanel {
                             .addComponent(jl_marca)
                             .addComponent(jl_unidad_medida))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_precio_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_unidad_medida, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtf_marca, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(jtf_precio_venta, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(jcb_unidad_medida, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(45, 45, 45))
         );
         jPanel4Layout.setVerticalGroup(
@@ -347,7 +348,7 @@ public class ViewProducto extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_tipo)
-                    .addComponent(jtf_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_tipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_marca)
@@ -358,9 +359,9 @@ public class ViewProducto extends javax.swing.JPanel {
                     .addComponent(jtf_precio_venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtf_unidad_medida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_unidad_medida))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(jl_unidad_medida)
+                    .addComponent(jcb_unidad_medida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -370,9 +371,9 @@ public class ViewProducto extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -429,7 +430,7 @@ public class ViewProducto extends javax.swing.JPanel {
                     .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -455,6 +456,7 @@ public class ViewProducto extends javax.swing.JPanel {
     public javax.swing.JButton jb_primero;
     public javax.swing.JButton jb_siguiente;
     public javax.swing.JButton jb_ultimo;
+    public javax.swing.JComboBox<String> jcb_unidad_medida;
     private javax.swing.JLabel jl_logo_empresa;
     public javax.swing.JLabel jl_marca;
     public javax.swing.JLabel jl_nombre;
@@ -470,7 +472,6 @@ public class ViewProducto extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_nombre;
     public javax.swing.JTextField jtf_precio_venta;
     public javax.swing.JTextField jtf_producto_id;
-    public javax.swing.JTextField jtf_tipo;
-    public javax.swing.JTextField jtf_unidad_medida;
+    public javax.swing.JTextField jtf_tipos;
     // End of variables declaration//GEN-END:variables
 }

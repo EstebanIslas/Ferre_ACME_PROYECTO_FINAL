@@ -31,13 +31,18 @@ public class ViewMain extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jl_img_logo = new javax.swing.JLabel();
         jmenu_menu = new javax.swing.JMenuBar();
-        jmenu = new javax.swing.JMenu();
-        jmi_sucursales = new javax.swing.JMenuItem();
-        jmi_productos = new javax.swing.JMenuItem();
-        jmi_proveedores = new javax.swing.JMenuItem();
-        jmi_descuentos = new javax.swing.JMenuItem();
+        jmenu_inicio = new javax.swing.JMenu();
+        jmenu_personal = new javax.swing.JMenu();
         jmi_usuarios = new javax.swing.JMenuItem();
         jmi_clientes = new javax.swing.JMenuItem();
+        jmenu_sucursal = new javax.swing.JMenu();
+        jmi_sucursales = new javax.swing.JMenuItem();
+        jmenu_productos = new javax.swing.JMenu();
+        jmi_productos = new javax.swing.JMenuItem();
+        jmenu_proveedores = new javax.swing.JMenu();
+        jmi_proveedores = new javax.swing.JMenuItem();
+        jmenu_transacciones = new javax.swing.JMenu();
+        jmi_descuentos = new javax.swing.JMenuItem();
         jmi_compra = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,16 +59,16 @@ public class ViewMain extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addComponent(jl_img_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93))
+                .addGap(96, 96, 96))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(jl_img_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -83,38 +88,104 @@ public class ViewMain extends javax.swing.JFrame {
                 .addContainerGap(227, Short.MAX_VALUE))
         );
 
+        jmenu_menu.setBackground(new java.awt.Color(0, 87, 112));
         jmenu_menu.setBorder(null);
-        jmenu_menu.setBorderPainted(false);
+        jmenu_menu.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_menu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jmenu_menu.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jmenu_menu.setOpaque(false);
+        jmenu_menu.setPreferredSize(new java.awt.Dimension(626, 45));
 
-        jmenu.setBorder(null);
-        jmenu.setText("MENÚ");
-        jmenu.setContentAreaFilled(false);
-        jmenu.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_inicio.setBackground(new java.awt.Color(0, 87, 112));
+        jmenu_inicio.setBorder(null);
+        jmenu_inicio.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_inicio.setText("INICIO");
+        jmenu_inicio.setBorderPainted(true);
+        jmenu_inicio.setContentAreaFilled(false);
+        jmenu_inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jmenu_inicio.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_inicio.setOpaque(true);
+        jmenu_menu.add(jmenu_inicio);
 
-        jmi_sucursales.setText("SUCURSALES");
-        jmenu.add(jmi_sucursales);
-
-        jmi_productos.setText("PRODUCTOS");
-        jmenu.add(jmi_productos);
-
-        jmi_proveedores.setText("PROVEEDORES");
-        jmenu.add(jmi_proveedores);
-
-        jmi_descuentos.setText("DESCUENTOS");
-        jmenu.add(jmi_descuentos);
+        jmenu_personal.setBackground(new java.awt.Color(0, 87, 112));
+        jmenu_personal.setBorder(null);
+        jmenu_personal.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_personal.setText("PERSONAL");
+        jmenu_personal.setBorderPainted(true);
+        jmenu_personal.setContentAreaFilled(false);
+        jmenu_personal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jmenu_personal.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_personal.setOpaque(true);
 
         jmi_usuarios.setText("USUARIOS");
-        jmenu.add(jmi_usuarios);
+        jmenu_personal.add(jmi_usuarios);
 
         jmi_clientes.setText("CLIENTES");
-        jmenu.add(jmi_clientes);
+        jmenu_personal.add(jmi_clientes);
+
+        jmenu_menu.add(jmenu_personal);
+
+        jmenu_sucursal.setBackground(new java.awt.Color(0, 87, 112));
+        jmenu_sucursal.setBorder(null);
+        jmenu_sucursal.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_sucursal.setText("SUCURSALES");
+        jmenu_sucursal.setBorderPainted(true);
+        jmenu_sucursal.setContentAreaFilled(false);
+        jmenu_sucursal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jmenu_sucursal.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_sucursal.setOpaque(true);
+
+        jmi_sucursales.setText("SUCURSALES");
+        jmenu_sucursal.add(jmi_sucursales);
+
+        jmenu_menu.add(jmenu_sucursal);
+
+        jmenu_productos.setBackground(new java.awt.Color(0, 87, 112));
+        jmenu_productos.setBorder(null);
+        jmenu_productos.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_productos.setText("PRODUCTOS");
+        jmenu_productos.setBorderPainted(true);
+        jmenu_productos.setContentAreaFilled(false);
+        jmenu_productos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jmenu_productos.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_productos.setOpaque(true);
+
+        jmi_productos.setText("PRODUCTOS");
+        jmenu_productos.add(jmi_productos);
+
+        jmenu_menu.add(jmenu_productos);
+
+        jmenu_proveedores.setBackground(new java.awt.Color(0, 87, 112));
+        jmenu_proveedores.setBorder(null);
+        jmenu_proveedores.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_proveedores.setText("PROVEEDORES");
+        jmenu_proveedores.setBorderPainted(true);
+        jmenu_proveedores.setContentAreaFilled(false);
+        jmenu_proveedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jmenu_proveedores.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_proveedores.setOpaque(true);
+
+        jmi_proveedores.setText("PROVEEDORES");
+        jmenu_proveedores.add(jmi_proveedores);
+
+        jmenu_menu.add(jmenu_proveedores);
+
+        jmenu_transacciones.setBackground(new java.awt.Color(0, 87, 112));
+        jmenu_transacciones.setBorder(null);
+        jmenu_transacciones.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_transacciones.setText("TRANSACCIONES");
+        jmenu_transacciones.setBorderPainted(true);
+        jmenu_transacciones.setContentAreaFilled(false);
+        jmenu_transacciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jmenu_transacciones.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_transacciones.setOpaque(true);
+
+        jmi_descuentos.setText("DESCUENTOS");
+        jmenu_transacciones.add(jmi_descuentos);
 
         jmi_compra.setText("COMPRAS");
-        jmenu.add(jmi_compra);
+        jmenu_transacciones.add(jmi_compra);
 
-        jmenu_menu.add(jmenu);
+        jmenu_menu.add(jmenu_transacciones);
 
         setJMenuBar(jmenu_menu);
 
@@ -173,8 +244,13 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jl_img_logo;
-    public javax.swing.JMenu jmenu;
+    public javax.swing.JMenu jmenu_inicio;
     private javax.swing.JMenuBar jmenu_menu;
+    public javax.swing.JMenu jmenu_personal;
+    public javax.swing.JMenu jmenu_productos;
+    public javax.swing.JMenu jmenu_proveedores;
+    public javax.swing.JMenu jmenu_sucursal;
+    public javax.swing.JMenu jmenu_transacciones;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_compra;
     public javax.swing.JMenuItem jmi_descuentos;

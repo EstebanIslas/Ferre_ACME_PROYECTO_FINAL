@@ -105,18 +105,20 @@ public class ControllerProducto implements KeyListener {
     private void getValues() {
         viewProducto.jtf_producto_id.setText(String.valueOf(modelProducto.getProducto_id()));
         viewProducto.jtf_nombre.setText(modelProducto.getNombre());
-        viewProducto.jtf_tipo.setText(modelProducto.getTipo());
+        viewProducto.jtf_tipos.setText(modelProducto.getTipo());
         viewProducto.jtf_marca.setText(modelProducto.getMarca());
         viewProducto.jtf_precio_venta.setText(String.valueOf(modelProducto.getPrecio_venta()));
-        viewProducto.jtf_unidad_medida.setText(modelProducto.getUnidad_medida());
+        //viewProducto.jtf_unidad_medida.setText(modelProducto.getUnidad_medida());
+        viewProducto.jcb_unidad_medida.setSelectedItem(modelProducto.getUnidad_medida());
     }
 
     private void habilitarCajas(boolean desi) {
         viewProducto.jtf_nombre.setEditable(desi);
-        viewProducto.jtf_tipo.setEditable(desi);
+        viewProducto.jtf_tipos.setEditable(desi);
         viewProducto.jtf_marca.setEditable(desi);
         viewProducto.jtf_precio_venta.setEditable(desi);
-        viewProducto.jtf_unidad_medida.setEditable(desi);
+        //viewProducto.jtf_unidad_medida.setEditable(desi);
+        viewProducto.jcb_unidad_medida.setEnabled(desi);
     }
 
     private void habilitarDezplazamiento(boolean desi) {
@@ -177,10 +179,11 @@ public class ControllerProducto implements KeyListener {
         habilitarDezplazamiento(false);
 
         viewProducto.jtf_nombre.setText("");
-        viewProducto.jtf_tipo.setText("");
+        viewProducto.jtf_tipos.setText("");
         viewProducto.jtf_marca.setText("");
         viewProducto.jtf_precio_venta.setText("");
-        viewProducto.jtf_unidad_medida.setText("");
+        //viewProducto.jtf_unidad_medida.setText("");
+        viewProducto.jcb_unidad_medida.setSelectedIndex(0);
 
         viewProducto.jb_eliminar.setEnabled(false);
         viewProducto.jb_nuevo.setEnabled(false);
@@ -197,7 +200,7 @@ public class ControllerProducto implements KeyListener {
     public void jbtn_guardar_actionPerformed() {
         //System.err.println("Action del boton guardar");
 
-        modelProducto.guardarRegistro(Integer.parseInt(viewProducto.jtf_producto_id.getText()), viewProducto.jtf_nombre.getText(), viewProducto.jtf_tipo.getText(), viewProducto.jtf_marca.getText(), Double.parseDouble(viewProducto.jtf_precio_venta.getText()), viewProducto.jtf_unidad_medida.getText());
+        modelProducto.guardarRegistro(Integer.parseInt(viewProducto.jtf_producto_id.getText()), viewProducto.jtf_nombre.getText(), viewProducto.jtf_tipos.getText(), viewProducto.jtf_marca.getText(), Double.parseDouble(viewProducto.jtf_precio_venta.getText()), String.valueOf(viewProducto.jcb_unidad_medida.getSelectedItem()));
 
         habilitarCajas(false);
         habilitarDezplazamiento(true);
@@ -290,10 +293,11 @@ public class ControllerProducto implements KeyListener {
                 
                 viewProducto.jtf_producto_id.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 0)));
                 viewProducto.jtf_nombre.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 1)));
-                viewProducto.jtf_tipo.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 2)));
+                viewProducto.jtf_tipos.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 2)));
                 viewProducto.jtf_marca.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 3)));
                 viewProducto.jtf_precio_venta.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 4)));
-                viewProducto.jtf_unidad_medida.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 5)));
+                //viewProducto.jtf_unidad_medida.setText(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 5)));
+                viewProducto.jcb_unidad_medida.setSelectedItem(String.valueOf(viewProducto.jtb_tabla_productos.getValueAt(seleccion, 5)));
             }
         }
 

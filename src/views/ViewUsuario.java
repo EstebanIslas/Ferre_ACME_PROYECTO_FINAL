@@ -35,9 +35,7 @@ public class ViewUsuario extends javax.swing.JPanel {
         jl_usuario_id = new javax.swing.JLabel();
         jtf_usuario_id = new javax.swing.JTextField();
         jl_sucursal_id = new javax.swing.JLabel();
-        jtf_sucursal_id = new javax.swing.JTextField();
         jl_tipo = new javax.swing.JLabel();
-        jtf_tipo = new javax.swing.JTextField();
         jl_nombre = new javax.swing.JLabel();
         jtf_nombre = new javax.swing.JTextField();
         jl_apellido_paterno = new javax.swing.JLabel();
@@ -70,6 +68,8 @@ public class ViewUsuario extends javax.swing.JPanel {
         jtf_curp = new javax.swing.JTextField();
         jl_password = new javax.swing.JLabel();
         jtf_password = new javax.swing.JTextField();
+        jcb_tipo = new javax.swing.JComboBox<>();
+        jcb_sucursal_id = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jb_editar = new javax.swing.JButton();
@@ -114,14 +114,8 @@ public class ViewUsuario extends javax.swing.JPanel {
         jl_sucursal_id.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_sucursal_id.setText("SUCURSAL ID:");
 
-        jtf_sucursal_id.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_sucursal_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-
         jl_tipo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_tipo.setText("TIPO:");
-
-        jtf_tipo.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_tipo.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         jl_nombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_nombre.setText("NOMBRE:");
@@ -219,6 +213,14 @@ public class ViewUsuario extends javax.swing.JPanel {
         jtf_password.setBackground(new java.awt.Color(244, 244, 244));
         jtf_password.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
+        jcb_tipo.setBackground(new java.awt.Color(244, 244, 244));
+        jcb_tipo.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jcb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vendedor", "Administrador" }));
+
+        jcb_sucursal_id.setBackground(new java.awt.Color(244, 244, 244));
+        jcb_sucursal_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jcb_sucursal_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -232,12 +234,6 @@ public class ViewUsuario extends javax.swing.JPanel {
                         .addComponent(jtf_usuario_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jl_colonia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jl_sucursal_id)
-                            .addComponent(jl_tipo)
                             .addComponent(jl_nombre)
                             .addComponent(jl_apellido_paterno)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -252,21 +248,24 @@ public class ViewUsuario extends javax.swing.JPanel {
                                 .addComponent(jl_telefono)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jl_colonia)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jl_apellido_materno)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jl_apellido_materno)
+                                    .addComponent(jl_tipo)
+                                    .addComponent(jl_sucursal_id))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jcb_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jcb_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtf_apellido_paterno, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtf_apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(58, 58, 58)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jl_password)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jl_curp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -296,6 +295,10 @@ public class ViewUsuario extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jtf_num_interno, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jl_password)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jl_num_externo)
                                 .addGap(18, 18, 18)
                                 .addComponent(jtf_num_externo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -313,13 +316,13 @@ public class ViewUsuario extends javax.swing.JPanel {
                     .addComponent(jl_sucursal_id)
                     .addComponent(jl_num_interno)
                     .addComponent(jtf_num_interno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcb_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_tipo)
                     .addComponent(jl_num_externo)
                     .addComponent(jtf_num_externo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcb_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_nombre)
@@ -364,7 +367,7 @@ public class ViewUsuario extends javax.swing.JPanel {
                     .addComponent(jl_password)
                     .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(244, 244, 244));
@@ -482,7 +485,7 @@ public class ViewUsuario extends javax.swing.JPanel {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtf_buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -586,10 +589,10 @@ public class ViewUsuario extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -621,7 +624,7 @@ public class ViewUsuario extends javax.swing.JPanel {
                     .addComponent(jl_logo_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -648,6 +651,8 @@ public class ViewUsuario extends javax.swing.JPanel {
     public javax.swing.JButton jb_primero;
     public javax.swing.JButton jb_siguiente;
     public javax.swing.JButton jb_ultimo;
+    public javax.swing.JComboBox<String> jcb_sucursal_id;
+    public javax.swing.JComboBox<String> jcb_tipo;
     public javax.swing.JLabel jl_apellido_materno;
     public javax.swing.JLabel jl_apellido_paterno;
     public javax.swing.JLabel jl_calle;
@@ -686,9 +691,7 @@ public class ViewUsuario extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_numero_seguro;
     public javax.swing.JTextField jtf_password;
     public javax.swing.JTextField jtf_rfc;
-    public javax.swing.JTextField jtf_sucursal_id;
     public javax.swing.JTextField jtf_telefono;
-    public javax.swing.JTextField jtf_tipo;
     public javax.swing.JTextField jtf_usuario_id;
     // End of variables declaration//GEN-END:variables
 }
