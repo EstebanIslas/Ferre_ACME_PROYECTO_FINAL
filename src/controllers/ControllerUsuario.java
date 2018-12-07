@@ -119,7 +119,7 @@ public class ControllerUsuario implements KeyListener{
         viewUsuario.jtf_ciudad.setText(modelUsuario.getCiudad());
         viewUsuario.jtf_estado.setText(modelUsuario.getEstado());
         viewUsuario.jtf_numero_seguro.setText(String.valueOf(modelUsuario.getNumero_seguro()));
-        viewUsuario.jtf_curp.setText(modelUsuario.getCurp());
+        viewUsuario.jtf_curp.setText(modelUsuario.getUser());
         viewUsuario.jtf_password.setText(modelUsuario.getPassword());
     }
     
@@ -265,6 +265,8 @@ public class ControllerUsuario implements KeyListener{
     
     public void jbtn_editar_actionPerformed() {
         modelUsuario.setDescicion("editar");
+        
+        agregarSucursalId();
         
         habilitarCajas(true);
         habilitarDesplazamiento(false);

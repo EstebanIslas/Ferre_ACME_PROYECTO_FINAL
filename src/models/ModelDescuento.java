@@ -22,7 +22,7 @@ public class ModelDescuento extends Conexion {
     private int descuentoid;
     private String nombre;
     private double porcentaje;
-    private String tipo;
+    private double bandera;
 
     private String descicion = "";
     private DefaultTableModel modelo = new DefaultTableModel();
@@ -51,12 +51,12 @@ public class ModelDescuento extends Conexion {
         this.porcentaje = porcentaje;
     }
 
-    public String getTipo() {
-        return tipo;
+    public double getBandera() {
+        return bandera;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setBandera(double bandera) {
+        this.bandera = bandera;
     }
 
     public String getDescicion() {
@@ -94,7 +94,7 @@ public class ModelDescuento extends Conexion {
             descuentoid = rs.getInt("descuentoid");
             nombre = rs.getString("nombre");
             porcentaje = rs.getDouble("porcentaje");
-            tipo = rs.getString("tipo");
+            bandera = rs.getDouble("bandera");
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error Model-setValues 001 " + ex.getMessage());
@@ -171,15 +171,26 @@ public class ModelDescuento extends Conexion {
         }
 
     }
-    public void guardarRegristro(int descuentoid, String nombre, double porcentaje, String tipo) {
+    
+    public void obtenerUltimoID(){
+        try {
+            if (rs.isLast() == false){
+                rs.last();
+                descuentoid = rs.getInt("descuentoid");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al Obtener Ultimo ID " + ex.getMessage());
+        }
+    }
+    public void guardarRegristro(int descuentoid, String nombre, double porcentaje, double bandera) {
         if (this.getDescicion() == "nuevo") {
             try {
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("Insert into descuentos (nombre, porcentaje, tipo) values (?,?,?)");                
+                ps = conexion.prepareStatement("Insert into descuentos (nombre, porcentaje, bandera) values (?,?,?)");                
                 ps.setString(1, nombre);
                 ps.setDouble(2, porcentaje);
-                ps.setString(3, tipo);
+                ps.setDouble(3, bandera);
                 
                 int res = ps.executeUpdate();
                 
@@ -199,10 +210,10 @@ public class ModelDescuento extends Conexion {
             try {
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("UPDATE descuentos SET nombre = ?, porcentaje=?, tipo=? WHERE descuentoid=?;");
+                ps = conexion.prepareStatement("UPDATE descuentos SET nombre = ?, porcentaje=?, bandera=? WHERE descuentoid=?;");
                 ps.setString(1, nombre);
                 ps.setDouble(2, porcentaje);
-                ps.setString(3, tipo);
+                ps.setDouble(3, bandera);
                 ps.setInt(4, descuentoid);
                 
                 int res = ps.executeUpdate();
@@ -250,7 +261,7 @@ public class ModelDescuento extends Conexion {
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Porcentaje");
-        modelo.addColumn("Tipo");
+        modelo.addColumn("Bandera");
     }
     
     public void agregaraTabla() {
@@ -292,7 +303,7 @@ public class ModelDescuento extends Conexion {
             conexion = null;
             conexion = getConexion();
 
-            ps = conexion.prepareStatement("SELECT * FROM descuentos where nombre like '%" + buscar + "%' Or tipo like '%" + buscar + "%';");
+            ps = conexion.prepareStatement("SELECT * FROM descuentos where nombre like '%" + buscar + "%' Or bandera like '%" + buscar + "%';");
             rs = ps.executeQuery();
 
             //System.out.println("Consulta");

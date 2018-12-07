@@ -38,7 +38,7 @@ public class ModelUsuario extends Conexion {
     private String ciudad;
     private String estado;
     private String numero_seguro;
-    private String curp;
+    private String user;
     private String password;
 
     private String descicion = "";
@@ -180,12 +180,12 @@ public class ModelUsuario extends Conexion {
         this.numero_seguro = numero_seguro;
     }
 
-    public String getCurp() {
-        return curp;
+    public String getUser() {
+        return user;
     }
 
-    public void setCurp(String curp) {
-        this.curp = curp;
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getPassword() {
@@ -265,7 +265,7 @@ public class ModelUsuario extends Conexion {
             ciudad = rs.getString("ciudad");
             estado = rs.getString("estado");
             numero_seguro = rs.getString("numero_seguro");
-            curp = rs.getString("curp");
+            user = rs.getString("username");
             password = rs.getString("password");
 
         } catch (SQLException ex) {
@@ -350,7 +350,7 @@ public class ModelUsuario extends Conexion {
 
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("Insert into usuario (sucursal_id, tipo, nombre, apellido_paterno, apellido_materno, telefono, rfc, calle, colonia, num_interior, num_exterior, codigo_postal, email, ciudad, estado, numero_seguro, curp, password) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+                ps = conexion.prepareStatement("Insert into usuario (sucursal_id, tipo, nombre, apellido_paterno, apellido_materno, telefono, rfc, calle, colonia, num_interior, num_exterior, codigo_postal, email, ciudad, estado, numero_seguro, username, password) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 
                 ps.setInt(1, sucursal_id);
                 ps.setString(2, tipo);
@@ -387,7 +387,7 @@ public class ModelUsuario extends Conexion {
 
                 conexion = null;
                 conexion = getConexion();
-                ps = conexion.prepareStatement("update usuario set sucursal_id=?, tipo=?, nombre=?, apellido_paterno=?, apellido_materno=?, telefono=?, rfc=?, calle=?, colonia=?, num_interior=?, num_exterior=?, codigo_postal=?, email=?, ciudad=?, estado=?, numero_seguro=?, curp=?, password=? where usuario_id=?;");
+                ps = conexion.prepareStatement("update usuario set sucursal_id=?, tipo=?, nombre=?, apellido_paterno=?, apellido_materno=?, telefono=?, rfc=?, calle=?, colonia=?, num_interior=?, num_exterior=?, codigo_postal=?, email=?, ciudad=?, estado=?, numero_seguro=?, username=?, password=? where usuario_id=?;");
 
                 ps.setInt(1, sucursal_id);
                 ps.setString(2, tipo);
@@ -469,7 +469,7 @@ public class ModelUsuario extends Conexion {
         modelo.addColumn("Ciudad");
         modelo.addColumn("Estado");
         modelo.addColumn("Imss");
-        modelo.addColumn("Curp");
+        modelo.addColumn("User");
         modelo.addColumn("Passwd");
     }
 

@@ -202,7 +202,7 @@ public class ViewUsuario extends javax.swing.JPanel {
         jtf_numero_seguro.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         jl_curp.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_curp.setText("CURP:");
+        jl_curp.setText("USERNAME:");
 
         jtf_curp.setBackground(new java.awt.Color(244, 244, 244));
         jtf_curp.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N

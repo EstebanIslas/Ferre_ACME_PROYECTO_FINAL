@@ -81,15 +81,15 @@ public class ControllerDescuento implements KeyListener {
         modelDescuento.consultaDescuentos();
         getValues();
 
-        viewDescuento.jtf_descuento_id.setVisible(false);
+        /*viewDescuento.jtf_descuento_id.setVisible(false);
         viewDescuento.jtf_descuento_id.setEnabled(false);
-        viewDescuento.jl_descuento_id.setVisible(false);
+        viewDescuento.jl_descuento_id.setVisible(false);*/
 
         habilitarCajas(false);
         habilitarDezplazamiento(true);
 
         llenarTabla();
-
+        
         this.viewDescuento.jtf_buscar.addKeyListener(this);
     }
 
@@ -97,12 +97,13 @@ public class ControllerDescuento implements KeyListener {
         viewDescuento.jtf_descuento_id.setText(String.valueOf(modelDescuento.getDescuentoid()));
         viewDescuento.jtf_nombre.setText(modelDescuento.getNombre());
         viewDescuento.jtf_porcentaje.setText(String.valueOf(modelDescuento.getPorcentaje()));
-        viewDescuento.jtf_tipo.setText(modelDescuento.getTipo());
+        viewDescuento.jtf_bandera_acumulada.setText(String.valueOf(modelDescuento.getBandera()));
+        
     }
 
     private void habilitarCajas(boolean desi) {
         viewDescuento.jtf_nombre.setEditable(desi);
-        viewDescuento.jtf_tipo.setEditable(desi);
+        viewDescuento.jtf_bandera_acumulada.setEditable(desi);
         viewDescuento.jtf_descuento_id.setEditable(desi);
         viewDescuento.jtf_porcentaje.setEditable(desi);
     }
@@ -159,9 +160,13 @@ public class ControllerDescuento implements KeyListener {
         habilitarCajas(true);
         habilitarDezplazamiento(false);
 
+        obtenerUltimoID();
+        
+        
+        
         viewDescuento.jtf_nombre.setText("");
-        viewDescuento.jtf_tipo.setText("");
-        viewDescuento.jtf_descuento_id.setText("");
+        //viewDescuento.jtf_tipo.setText("");
+        viewDescuento.jtf_bandera_acumulada.setText("");
         viewDescuento.jtf_porcentaje.setText("");
 
         viewDescuento.jb_eliminar.setEnabled(false);
@@ -180,7 +185,7 @@ public class ControllerDescuento implements KeyListener {
         //System.err.println("Action del boton guardar");
         try {
             
-            modelDescuento.guardarRegristro(Integer.parseInt(viewDescuento.jtf_descuento_id.getText()), viewDescuento.jtf_nombre.getText(), Double.parseDouble(viewDescuento.jtf_porcentaje.getText()), viewDescuento.jtf_tipo.getText());
+            modelDescuento.guardarRegristro(Integer.parseInt(viewDescuento.jtf_descuento_id.getText()), viewDescuento.jtf_nombre.getText(), Double.parseDouble(viewDescuento.jtf_porcentaje.getText()), Double.parseDouble(viewDescuento.jtf_bandera_acumulada.getText()));
             
             habilitarCajas(false);
             habilitarDezplazamiento(true);
@@ -248,6 +253,14 @@ public class ControllerDescuento implements KeyListener {
         modelDescuento.agregaraTabla();
 
     }
+    
+    
+    
+    private void obtenerUltimoID(){
+        //System.out.println("Hace Algo ObtenerUlrimo");
+        modelDescuento.obtenerUltimoID();
+        viewDescuento.jtf_descuento_id.setText(String.valueOf(modelDescuento.getDescuentoid()+1));
+    }
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -278,7 +291,7 @@ public class ControllerDescuento implements KeyListener {
                 viewDescuento.jtf_descuento_id.setText(String.valueOf(viewDescuento.jtb_tabla_descuentos.getValueAt(seleccion, 0)));
                 viewDescuento.jtf_nombre.setText(String.valueOf(viewDescuento.jtb_tabla_descuentos.getValueAt(seleccion, 1)));
                 viewDescuento.jtf_porcentaje.setText(String.valueOf(viewDescuento.jtb_tabla_descuentos.getValueAt(seleccion, 2)));
-                viewDescuento.jtf_tipo.setText(String.valueOf(viewDescuento.jtb_tabla_descuentos.getValueAt(seleccion, 3)));
+                viewDescuento.jtf_bandera_acumulada.setText(String.valueOf(viewDescuento.jtb_tabla_descuentos.getValueAt(seleccion, 3)));
             }
         }
 

@@ -44,6 +44,8 @@ public class ViewMain extends javax.swing.JFrame {
         jmenu_transacciones = new javax.swing.JMenu();
         jmi_descuentos = new javax.swing.JMenuItem();
         jmi_compra = new javax.swing.JMenuItem();
+        jmenu_inicio1 = new javax.swing.JMenu();
+        jmi_respaldo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
@@ -187,6 +189,21 @@ public class ViewMain extends javax.swing.JFrame {
 
         jmenu_menu.add(jmenu_transacciones);
 
+        jmenu_inicio1.setBackground(new java.awt.Color(0, 87, 112));
+        jmenu_inicio1.setBorder(null);
+        jmenu_inicio1.setForeground(new java.awt.Color(255, 255, 255));
+        jmenu_inicio1.setText("RESPALDOS");
+        jmenu_inicio1.setBorderPainted(true);
+        jmenu_inicio1.setContentAreaFilled(false);
+        jmenu_inicio1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jmenu_inicio1.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jmenu_inicio1.setOpaque(true);
+
+        jmi_respaldo.setText("Respaldos");
+        jmenu_inicio1.add(jmi_respaldo);
+
+        jmenu_menu.add(jmenu_inicio1);
+
         setJMenuBar(jmenu_menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -245,6 +262,7 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jl_img_logo;
     public javax.swing.JMenu jmenu_inicio;
+    public javax.swing.JMenu jmenu_inicio1;
     private javax.swing.JMenuBar jmenu_menu;
     public javax.swing.JMenu jmenu_personal;
     public javax.swing.JMenu jmenu_productos;
@@ -256,6 +274,7 @@ public class ViewMain extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_descuentos;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
+    public javax.swing.JMenuItem jmi_respaldo;
     public javax.swing.JMenuItem jmi_sucursales;
     public javax.swing.JMenuItem jmi_usuarios;
     // End of variables declaration//GEN-END:variables

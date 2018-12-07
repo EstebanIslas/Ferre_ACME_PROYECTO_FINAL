@@ -33,11 +33,11 @@ public class ViewDescuento extends javax.swing.JPanel {
         jl_descuento_id = new javax.swing.JLabel();
         jl_nombre = new javax.swing.JLabel();
         jl_porcentaje = new javax.swing.JLabel();
-        jl_tipo = new javax.swing.JLabel();
         jtf_descuento_id = new javax.swing.JTextField();
         jtf_nombre = new javax.swing.JTextField();
         jtf_porcentaje = new javax.swing.JTextField();
-        jtf_tipo = new javax.swing.JTextField();
+        jl_bandera_acumulada = new javax.swing.JLabel();
+        jtf_bandera_acumulada = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jb_cancelar = new javax.swing.JButton();
         jb_eliminar = new javax.swing.JButton();
@@ -81,9 +81,6 @@ public class ViewDescuento extends javax.swing.JPanel {
         jl_porcentaje.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_porcentaje.setText("PORCENTAJE:");
 
-        jl_tipo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_tipo.setText("TIPO:");
-
         jtf_descuento_id.setBackground(new java.awt.Color(244, 244, 244));
         jtf_descuento_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
@@ -93,8 +90,11 @@ public class ViewDescuento extends javax.swing.JPanel {
         jtf_porcentaje.setBackground(new java.awt.Color(244, 244, 244));
         jtf_porcentaje.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
-        jtf_tipo.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_tipo.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jl_bandera_acumulada.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jl_bandera_acumulada.setText("BANDERA:");
+
+        jtf_bandera_acumulada.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_bandera_acumulada.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -103,17 +103,18 @@ public class ViewDescuento extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jl_tipo)
+                    .addComponent(jl_bandera_acumulada)
                     .addComponent(jl_porcentaje)
                     .addComponent(jl_nombre)
                     .addComponent(jl_descuento_id))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtf_descuento_id, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_porcentaje, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jtf_descuento_id, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                        .addComponent(jtf_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                        .addComponent(jtf_porcentaje, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                    .addComponent(jtf_bandera_acumulada, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,9 +133,9 @@ public class ViewDescuento extends javax.swing.JPanel {
                     .addComponent(jtf_porcentaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_tipo)
-                    .addComponent(jtf_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(jl_bandera_acumulada)
+                    .addComponent(jtf_bandera_acumulada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(244, 244, 244));
@@ -259,7 +260,7 @@ public class ViewDescuento extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
                     .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jtb_tabla_descuentos.setModel(new javax.swing.table.DefaultTableModel(
@@ -341,18 +342,17 @@ public class ViewDescuento extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,13 +360,15 @@ public class ViewDescuento extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(58, 58, 58))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jl_titulo.setFont(new java.awt.Font("Arial", 1, 33)); // NOI18N
@@ -428,18 +430,18 @@ public class ViewDescuento extends javax.swing.JPanel {
     public javax.swing.JButton jb_primero;
     public javax.swing.JButton jb_siguiente;
     public javax.swing.JButton jb_ultimo;
+    public javax.swing.JLabel jl_bandera_acumulada;
     public javax.swing.JLabel jl_descuento_id;
     private javax.swing.JLabel jl_logo_empresa;
     public javax.swing.JLabel jl_nombre;
     public javax.swing.JLabel jl_porcentaje;
     public javax.swing.JLabel jl_producto_id1;
-    public javax.swing.JLabel jl_tipo;
     private javax.swing.JLabel jl_titulo;
     public javax.swing.JTable jtb_tabla_descuentos;
+    public javax.swing.JTextField jtf_bandera_acumulada;
     public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_descuento_id;
     public javax.swing.JTextField jtf_nombre;
     public javax.swing.JTextField jtf_porcentaje;
-    public javax.swing.JTextField jtf_tipo;
     // End of variables declaration//GEN-END:variables
 }

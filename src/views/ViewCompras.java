@@ -42,7 +42,8 @@ public class ViewCompras extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtb_productos = new javax.swing.JTable();
         jb_agregar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jtf_id_producto = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jl_subtotal = new javax.swing.JLabel();
         jtf_subtotal = new javax.swing.JTextField();
@@ -55,13 +56,12 @@ public class ViewCompras extends javax.swing.JPanel {
         jl_compra_id = new javax.swing.JLabel();
         jtf_compra_id = new javax.swing.JTextField();
         jl_sucursal = new javax.swing.JLabel();
-        jtf_sucursal_calle = new javax.swing.JTextField();
         jtf_sucursal_id = new javax.swing.JTextField();
-        jl_fecha = new javax.swing.JLabel();
-        jtf_fecha = new javax.swing.JTextField();
         jl_usuario = new javax.swing.JLabel();
-        jtf_usuario_nombre = new javax.swing.JTextField();
-        jtf_compra_id4 = new javax.swing.JTextField();
+        jtf_usuarioid = new javax.swing.JTextField();
+        jl_cantidad1 = new javax.swing.JLabel();
+        jb_eliminar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jl_logoempresa = new javax.swing.JLabel();
         jl_titulo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -118,13 +118,16 @@ public class ViewCompras extends javax.swing.JPanel {
         jb_agregar.setBackground(new java.awt.Color(48, 131, 175));
         jb_agregar.setFont(new java.awt.Font("Arial", 3, 17)); // NOI18N
         jb_agregar.setForeground(new java.awt.Color(255, 255, 255));
-        jb_agregar.setText("Agregar");
+        jb_agregar.setText("Agregar Producto");
         jb_agregar.setBorder(null);
         jb_agregar.setContentAreaFilled(false);
         jb_agregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_agregar.setOpaque(true);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nuevo_documento.png"))); // NOI18N
+        jtf_id_producto.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_id_producto.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nuevo_documento.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -151,15 +154,20 @@ public class ViewCompras extends javax.swing.JPanel {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jtf_precio_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jsp_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(231, 231, 231)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jb_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(274, 274, 274)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtf_id_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(241, 241, 241)
+                    .addComponent(jLabel3)
+                    .addContainerGap(439, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,13 +189,18 @@ public class ViewCompras extends javax.swing.JPanel {
                             .addComponent(jtf_precio_compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jsp_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jsp_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtf_id_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jl_cantidad))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap())
+                .addComponent(jb_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(163, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addGap(21, 21, 21)))
         );
 
         jl_subtotal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -267,26 +280,14 @@ public class ViewCompras extends javax.swing.JPanel {
         jl_sucursal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_sucursal.setText("SUCURSAL:");
 
-        jtf_sucursal_calle.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_sucursal_calle.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-
         jtf_sucursal_id.setBackground(new java.awt.Color(244, 244, 244));
         jtf_sucursal_id.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-
-        jl_fecha.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jl_fecha.setText("FECHA:");
-
-        jtf_fecha.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_fecha.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         jl_usuario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jl_usuario.setText("USUARIO:");
 
-        jtf_usuario_nombre.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_usuario_nombre.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-
-        jtf_compra_id4.setBackground(new java.awt.Color(244, 244, 244));
-        jtf_compra_id4.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jtf_usuarioid.setBackground(new java.awt.Color(244, 244, 244));
+        jtf_usuarioid.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -300,23 +301,15 @@ public class ViewCompras extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jtf_usuario_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_compra_id4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jtf_compra_id, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(194, 194, 194)
                         .addComponent(jl_sucursal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtf_sucursal_calle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(jl_fecha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jtf_usuarioid, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,18 +319,27 @@ public class ViewCompras extends javax.swing.JPanel {
                     .addComponent(jl_compra_id)
                     .addComponent(jtf_compra_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_sucursal)
-                    .addComponent(jtf_sucursal_calle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_fecha)
-                    .addComponent(jtf_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtf_sucursal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_usuario)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jtf_usuario_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jtf_compra_id4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jtf_usuarioid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        jl_cantidad1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jl_cantidad1.setText("TABLA AUXILIAR");
+
+        jb_eliminar.setBackground(new java.awt.Color(48, 131, 175));
+        jb_eliminar.setFont(new java.awt.Font("Arial", 3, 17)); // NOI18N
+        jb_eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        jb_eliminar.setText("Eliminar");
+        jb_eliminar.setBorder(null);
+        jb_eliminar.setContentAreaFilled(false);
+        jb_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_eliminar.setOpaque(true);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancelar - copia.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -347,16 +349,25 @@ public class ViewCompras extends javax.swing.JPanel {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(50, 50, 50)
+                                        .addComponent(jLabel2))))
+                            .addComponent(jl_cantidad1))
+                        .addGap(74, 74, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(304, 304, 304))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 65, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,11 +376,21 @@ public class ViewCompras extends javax.swing.JPanel {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jl_cantidad1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jl_logoempresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/debug_ware (1).png"))); // NOI18N
@@ -392,7 +413,7 @@ public class ViewCompras extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jl_titulo)
                 .addContainerGap())
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,6 +436,7 @@ public class ViewCompras extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -423,11 +445,12 @@ public class ViewCompras extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JButton jb_agregar;
+    public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_finalizar;
     public javax.swing.JLabel jl_buscar;
     public javax.swing.JLabel jl_cantidad;
+    public javax.swing.JLabel jl_cantidad1;
     public javax.swing.JLabel jl_compra_id;
-    public javax.swing.JLabel jl_fecha;
     public javax.swing.JLabel jl_iva;
     private javax.swing.JLabel jl_logoempresa;
     public javax.swing.JLabel jl_nombre_producto;
@@ -442,15 +465,13 @@ public class ViewCompras extends javax.swing.JPanel {
     public javax.swing.JTable jtb_productos;
     public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_compra_id;
-    public javax.swing.JTextField jtf_compra_id4;
-    public javax.swing.JTextField jtf_fecha;
+    public javax.swing.JTextField jtf_id_producto;
     public javax.swing.JTextField jtf_iva;
     public javax.swing.JTextField jtf_nombre_producto;
     public javax.swing.JTextField jtf_precio_compra;
     public javax.swing.JTextField jtf_subtotal;
-    public javax.swing.JTextField jtf_sucursal_calle;
     public javax.swing.JTextField jtf_sucursal_id;
     public javax.swing.JTextField jtf_total;
-    public javax.swing.JTextField jtf_usuario_nombre;
+    public javax.swing.JTextField jtf_usuarioid;
     // End of variables declaration//GEN-END:variables
 }
