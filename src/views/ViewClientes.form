@@ -24,6 +24,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jl_logo_empresa" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -41,6 +43,7 @@
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Component id="jl_titulo" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jl_logo_empresa" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
               </Group>
@@ -1142,5 +1145,16 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="af" green="83" red="30" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="af" green="83" red="30" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="EstebanIslas"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
